@@ -1,0 +1,278 @@
+color1 = rgba(0, 91, 86, 1)
+color2 = #00251a
+color3 = #39796b
+color4 = #ffffff
+color5 = #111111
+
+
+body
+	background-color #f5f6fa
+	font-size 14px
+	font-family: 'Roboto', sans-serif;
+
+h2,h3,h4,h5,ul,body,html
+	padding 0px
+	margin 0px
+
+a
+	text-decoration none
+	&:hover
+		text-decoration none
+
+.form-control
+	&:focus
+		box-shadow none
+		outline none
+
+.mtop16
+	margin-top 16px
+
+.mb32
+	margin-bottom 32px
+
+.mb16
+	margin-bottom 16px
+
+.wrapper
+	min-height 100vh
+	overflow hidden
+	.col1
+		float left
+		position relative
+		z-index 999
+		width 17%
+	.col2
+		float left
+		width 83%
+
+.sidebar
+	background-color color4
+	min-height 130vh
+	.section-top
+		background-color color1
+		box-shadow 0 0.5rem 1rem rgba(0,0,0,0.15)
+	.logo
+		display block
+		margin 0px auto
+		padding-top 24px
+		width 60%
+	.user
+		color color4 !important
+		padding 16px
+		a
+			color color4 !important
+			font-size 1.2em
+			i
+				margin-left 10px
+
+	.main
+		display block
+		margin-top 10px
+		ul
+			li
+				margin-bottom 4px
+				a
+					color #616161 !important
+					display block
+					font-size 1.1em
+					padding 12px 12px
+					i
+						margin-right 10px
+					&:hover
+						background-color color1
+						box-shadow 0 0.5rem 1rem rgba(0,0,0,0.15)
+						color color4 !important
+						text-decoration none
+				a.active
+					background-color color1
+					box-shadow 0 0.5rem 1rem rgba(0,0,0,0.15)
+					color color4 !important
+					text-decoration none
+
+.navbar
+	background-color color1
+	a
+		color color4 !important
+
+.page
+	padding-top 16px
+	padding-bottom 16px
+	.breadcrumb
+		background-color #fff
+		box-shadow 0 0.5rem 1rem rgba(0,0,0,0.10) !important
+		.breadcrumb-item
+			a
+				color #616161
+				&:hover
+					text-decoration none !important
+
+	.panel
+		background-color #fff
+		border-radius 6px
+		border-bottom 2px solid color1
+		width 100%
+		.header
+			border-bottom 1px solid #e8e8e8
+			h2.title
+				display inline-block
+				color #19213d
+				font-size 1.1em
+				padding 12px 16px
+			ul
+				display inline-block
+				float right
+				margin-right 12px
+				li
+					display inline-block
+					position relative
+					a
+						display inline-block
+						padding 12px
+						color color5
+						&:hover
+							background-color color1
+							color color4 !important
+							text-decoration none
+							i
+								color color4
+						i
+							color color1
+
+					ul
+						display none
+						border 1px solid #f0f0f0
+						background-color #fff
+						position absolute
+						right -16px
+						float none
+						width 200px
+						li
+							display inline-block
+							width 100%
+							border-bottom 1px solid #f0f0f0
+							&:last-child
+								border-bottom 0px
+							a
+								display block
+								width value
+					&:hover
+						ul
+							display block
+		.inside
+			padding 16px
+			.btns
+				a
+					border 1px solid #000
+					color #000 !important
+					background-color color1
+
+			.nav
+				.nav-link
+					border 1px solid color5
+					margin-right 10px
+					width 48%
+					text-align center
+					color color5
+					&:hover
+						background-color color1
+						color color4 !important
+			.form_search
+				display none
+				margin-bottom 16px
+				.btn
+					width 100%
+			.big_count
+				display block
+				text-align center
+				font-size 2em
+				width 100%
+
+.opts
+	a
+		border-radius 5px
+		border 1px solid #616161
+		display inline-block
+		padding 8px 12px
+		color #000
+
+.product_gallery
+	overflow hidden
+	.btn_submit
+		display block
+		margin-right 1%
+		width 100%
+		a
+			border 1px dashed #000
+			color #000
+			border-radius 4px
+			text-align center
+			font-size 1.5em
+			padding 12px
+			display block
+			width 100%
+			&:hover
+				border 1px solid #e65100
+				background-color color1
+				color #e65100
+	.tumbs
+		overflow hidden
+		.tumb
+			margin-top 16px
+			position relative
+			float left
+			width 48%
+			a
+				background-color rgba(0, 0, 0, .5)
+				border-radius 50%
+				color #fff
+				padding 6px 10px
+				display inline-block
+				position absolute
+				bottom 8px
+				right 8px
+			img
+				border-radius 4px
+				width 100%
+			&:nth-child(odd)
+				margin-right 4%
+
+.page_user
+	.mini_profile
+		.avatar
+			display block
+			margin 0px auto
+			border-radius 50%
+			width 150px
+		.info
+			background-color #fff
+			span
+				display block
+				font-size 1.1em
+				width 100%
+			span.title
+				font-weight bold
+				margin-top 16px
+		.btn
+			margin-top 16px
+			width 100%
+
+.alert
+	ul
+		list-style-position inside
+		margin-left 16px
+
+.slider_content
+	background-color #f9f9f9
+	border-radius 4px
+	padding 16px
+	h2
+		font-size 1.4em
+		margin 0px
+		padding 0px
+	h1
+		font-size 1.8em
+		font-weight bold
+
+
+
+
