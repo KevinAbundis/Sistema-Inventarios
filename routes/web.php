@@ -18,3 +18,5 @@ Route::get('/', function () {
 
 //Route Auth
 Route::get('/login', 'ConnectController@getLogin')->name('login');
+Route::get('/recover', 'ConnectController@getRecover')->name('recover');
+Route::get('/reset', 'ConnectController@getReset')->name('reset');
