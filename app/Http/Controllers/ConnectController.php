@@ -8,18 +8,43 @@ use App\Models\User;
 
 class ConnectController extends Controller
 {
+	public function __construct(){
+		$this->middleware('guest')->except(['getLogout']);
+	}
+
+
     public function getLogin(){
     	return view('connect.login');
     }
 
+    public function postLogin(Request $request){
+    	$rules = [
+    		'email' => 'required|email',
+    		'password' => 'required|min:8',
+    	];
 
-    public function getRecover(){
-        return view('connect.recover');
-    }
+    	$messages = [
+    		'email.required' => 'Su correo electrónico es requerido.',
+    		'email.email' => 'El formato de su correo electrónico es invalido.',
+    		'password.required' => 'Por favor escriba una contraseña.',
+    		'password.min' => 'La contraseña debe de tener al menos 8 caracteres.',
+    	];
 
-    public function getReset(Request $request){
-        $data = ['email' => $request->get('email')];
-        return view('connect.reset', $data);
+    	$validator = Validator::make($request->all(), $rules, $messages);
+
+        if($validator->fails()):
+    		return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger');
+    	else:
+    		if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')], true)):
+                if(Auth::user()->status == "100"):
+                    return redirect('/logout');
+                else:
+                    return redirect('/admin');
+                endif;
+    		else:
+    			return back()->with('message','Correo electrónico o contraseña incorrecta.')->with('typealert','danger');
+    		endif;
+    	endif;
     }
 
 
@@ -63,4 +88,27 @@ class ConnectController extends Controller
     		endif;
     	endif;
     }
+
+    public function getLogout(){
+        $status = Auth::user()->status;
+        Auth::logout();
+        if($status == "100"):
+            return redirect('/login')->with('message','Su usuario fue suspendido.')->with('typealert','danger');
+        else:
+            return redirect('/');
+        endif;
+    }
+
+
+    public function getRecover(){
+        return view('connect.recover');
+    }
+
+
+    public function getReset(Request $request){
+        $data = ['email' => $request->get('email')];
+        return view('connect.reset', $data);
+    }
+
+
 }

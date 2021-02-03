@@ -1,6 +1,6 @@
 @extends('connect.master')
 
-@section('title','Registrarse')
+@section('title','Register')
 
 @section('content')
 <div class="box box_register shadow">
