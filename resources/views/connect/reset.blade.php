@@ -48,7 +48,7 @@
 		</div>
 
 
-		{!! Form::submit('Enviar mi contraseña',['class' => 'btn btn-success mtop16']) !!}
+		{!! Form::submit('Enviar Contraseña',['class' => 'btn btn-success mtop16']) !!}
 		{!! Form::close() !!}
 
 
