@@ -23,4 +23,8 @@ class UsersController extends Controller
     	$data = ['users' => $users];
     	return view('admin.users.home', $data);
     }
+
+    public function getUserAdd(){
+    	return view('admin.users.user_add');
+    }
 }

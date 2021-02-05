@@ -30,9 +30,8 @@ function getRoleUserArray($mode, $id){
 
 function getUserStatusArray($mode, $id){
 	$status = [
-		'0' => 'Registrado',
-		'1' => 'Verificado',
-		'100' => 'Baneado'
+		'1' => 'Activo',
+		'100' => 'Inactivo'
 	];
 
 	if(!is_null($mode)):
