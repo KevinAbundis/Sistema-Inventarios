@@ -22,6 +22,11 @@
 				</li>
 				{{-- @endif --}}
 				<li>
+					<a href="#" id="btn_search">
+						<i class="fas fa-search"></i>	Buscar
+					</a>
+				</li>
+				<li>
 					<a href="#"> Filtrar <i class="fas fa-angle-down"></i></a>
 					<ul class="shadow">
 						<li><a href="{{ url('/admin/users/all') }}"><i class="fas fa-stream"></i> Todos</a></li>
@@ -29,18 +34,13 @@
 						<li><a href="{{ url('/admin/users/100') }}"><i class="fas fa-heart-broken"></i> Inactivos</a></li>
 					</ul>
 				</li>
-				<li>
-					<a href="#" id="btn_search">
-						<i class="fas fa-search"></i>	Buscar
-					</a>
-				</li>
 			</ul>
 		</div>
 
 		<div class="inside">
 			{{-- Formulario de búsqueda --}}
 			<div class="form_search" id="form_search">
-				{!! Form::open(['url' => '/admin/product/search']) !!}
+				{!! Form::open(['url' => '/admin/user/search']) !!}
 				<div class="row">
 					<div class="col-md-8">
 						{!! Form::text('search', null, ['class' => 'form-control', 'placeholder' => 'Ingrese su búsqueda', 'required']) !!}
