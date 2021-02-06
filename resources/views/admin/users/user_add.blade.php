@@ -61,7 +61,7 @@
 						<span class="input-group-text" id="basic-addon1">
 							<i class="fas fa-keyboard"></i>
 						</span>
-						{!!Form::select('user_type', getRoleUserArray('list', null), null, ['class' => 'form-select'])!!}
+						{!!Form::select('user_type', getRoleUserArray('list', null), 0, ['class' => 'form-select'])!!}
 					</div>
 				</div>
 
@@ -71,7 +71,7 @@
 						<span class="input-group-text" id="basic-addon1">
 							<i class="fas fa-keyboard"></i>
 						</span>
-						{!!Form::select('user_status', getUserStatusArray('list', null), null, ['class' => 'form-select'])!!}
+						{!!Form::select('user_status', getUserStatusArray('list', null), 1, ['class' => 'form-select'])!!}
 					</div>
 				</div>
 
