@@ -14,13 +14,13 @@
 		<div class="header">
 			<h2 class="title"><i class="fas fa-user-friends"></i>	Usuarios</h2>
 			<ul>
-				{{-- @if(kvfj(Auth::user()->permissions, 'product_add')) --}}
+				@if(Auth::user()->role == "1")
 				<li>
 					<a href="{{ url('/admin/user/add') }}">
 						<i class="fas fa-plus-circle"></i>	Agregar Usuario
 					</a>
 				</li>
-				{{-- @endif --}}
+				@endif
 				<li>
 					<a href="#" id="btn_search">
 						<i class="fas fa-search"></i>	Buscar

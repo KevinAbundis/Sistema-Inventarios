@@ -20,7 +20,12 @@ class IsAdmin
         if(Auth::user()->role == "1"):
             return $next($request);
         else:
-            return redirect('/');
+            if(Auth::user()->role == "0"):
+                return $next($request);
+            else:
+                return redirect('/');
+            endif;
         endif;
+
     }
 }
