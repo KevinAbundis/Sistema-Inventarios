@@ -2,8 +2,9 @@
 	<div class="section-top">
 		<div class="logo">
 			<img src="{{ url('static/images/chevrolet.png') }}" class="img-fluid">
+			<h6>CHEVROLET</h6>
 		</div>
-		<div class="user mtop16">
+		{{-- <div class="user mtop16">
 			<span class="subtitle">Bienvenido:</span>
 			<div class="name">
 				{{ Auth::user()->name }}	{{ Auth::user()->lastname }}
@@ -12,7 +13,7 @@
 				</a>
 			</div>
 			<div class="email">{{ Auth::user()->email }}</div>
-		</div>
+		</div> --}}
 	</div>
 
 	<div class="main">

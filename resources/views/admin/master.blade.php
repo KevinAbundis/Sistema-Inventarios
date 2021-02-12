@@ -34,7 +34,7 @@
 	<div class="wrapper">
 		<div class="col1">@include('admin.sidebar')</div>
 		<div class="col2">
-			<nav class="navbar navbar-expand-lg shadow">
+			{{-- <nav class="navbar navbar-expand-lg shadow">
 				<div class="collapse navbar-collapse">
 					<ul class="navbar-nav">
 						<li class="nav-item">
@@ -43,6 +43,38 @@
 							</a>
 						</li>
 					</ul>
+				</div>
+			</nav> --}}
+
+			<nav class="navbar navbar-expand-lg shadow">
+				<div class="container">
+					<div class="collapse navbar-collapse" id="navigationMain">
+						<ul class="navbar-nav ml-auto">
+
+							<li class="nav-item dropdown link-acc link-user">
+								<a href="#" class="nav-link btn dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+									@if(is_null(Auth::user()->avatar))
+									<img src="{{ url('/static/images/default-avatar-1.png') }}">
+									@else
+									<img src="{{ url('/uploads_users/'.Auth::id().'/av_'.Auth::user()->avatar) }}">
+									@endif {{ Auth::user()->name }}
+								</a>
+								<ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+									<li>
+										<a class="dropdown-item" href="{{ url('/account/edit') }}">
+											<i class="fas fa-address-card"></i> 	Editar Perfil
+										</a>
+									</li>
+
+									<li>
+										<a class="dropdown-item" href="{{ url('/logout') }}">
+											<i class="fas fa-sign-out-alt"></i> 	Cerrar Sesión
+										</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</nav>
 

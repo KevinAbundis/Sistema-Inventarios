@@ -1,5 +1,5 @@
 color1 = #134A9C
-color2 = #00251a
+color2 = #00246d
 color3 = #39796b
 color4 = #ffffff
 color5 = #111111
@@ -53,12 +53,19 @@ a
 	min-height 130vh
 	.section-top
 		background-color color1
-		box-shadow 0 0.5rem 1rem rgba(0,0,0,0.15)
+		box-shadow 0 0.5rem 1rem rgba(0,0,0,0.25)
+		padding-bottom 10px
 	.logo
-		display block
-		margin 0px auto
-		padding-top 24px
-		width 90%
+		display inline-flex
+		padding-top 10px
+		width 40%
+		h6
+			color #fff
+			text-align center
+			margin-top 10px
+			font-weight bold
+			font-family: 'Roboto', sans-serif;
+			margin-left 5px
 	.user
 		color color4 !important
 		padding 16px
@@ -94,8 +101,71 @@ a
 
 .navbar
 	background-color color1
-	a
-		color color4 !important
+	color color4 !important
+	padding-top 14px
+	padding-bottom 15px
+	.navbar-nav
+		li.nav-item
+			a.nav-link
+				color #fff
+				border-radius 4px
+				font-size 0.9em
+				font-weight bold
+				margin-right 4px
+				padding 5px 16px !important
+				&:hover
+					color color3
+			a.btn
+				color #fff
+				&:focus
+					box-shadow none
+					outline none
+				&:hover
+					background-color color1
+					color color4
+			ul.dropdown-menu
+				border-radius 0px 0px 4px 4px
+				background-color #fff
+				border 0px
+				top 137% !important
+				li
+					border-bottom 1px solid #fff
+					a
+						color #000
+						display block
+						float none
+						width 100%
+						i
+							color color1
+					&:last-child
+						border-bottom 0px
+					&:hover
+						background-color #f7f7f7
+		li.link-acc
+			overflow hidden
+			a
+				display inline-block
+				float left
+				margin-right 0px !important
+				&:first-child
+					border-radius 4px 0px 0px 4px
+					border-right 1px solid #fff
+				&:last-child
+					border-radius 0px 4px 4px 0px
+				img
+					position relative
+					top -2px
+					margin-right 6px
+					width 24px
+		li.link-user
+			overflow initial
+			a
+				border 0px !important
+				img
+					border-radius 50%
+				&:hover
+					background-color transparent !important
+
 
 .page
 	padding-top 16px
