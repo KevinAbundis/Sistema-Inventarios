@@ -15,12 +15,13 @@ class UsersController extends Controller
         $this->middleware('user.status');
     }
 
-    public function getUsers($status){
-        if($status == 'all'):
-    	   $users = User::orderBy('id', 'Asc')->paginate(25);
-        else:
-            $users = User::where('status', $status)->orderBy('id', 'Asc')->paginate(25);
-        endif;
+    public function getUsers(){
+        $users = User::all();
+        // if($status == 'all'):
+    	   // $users = User::orderBy('id', 'Asc')->paginate(25);
+        // else:
+        //     $users = User::where('status', $status)->orderBy('id', 'Asc')->paginate(25);
+        // endif;
     	$data = ['users' => $users];
     	return view('admin.users.home', $data);
     }
@@ -102,30 +103,33 @@ class UsersController extends Controller
         endif;
     }
 
-    public function postUserSearch(Request $request){
-        $rules = [
-            'search' => 'required',
-        ];
 
-        $messages = [
-            'search.required' => 'El campo consulta es requerido.',
-        ];
 
-        $validator = Validator::make($request->all(), $rules, $messages);
-        if($validator->fails()):
-            return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger');
-        else:
-            switch ($request->input('filter')):
-                case '0':
-                    $users = User::where('name', 'LIKE', '%'.$request->input('search').'%')->orderBy('id', 'asc')->paginate(25);
-                    break;
-                case '1':
-                    $users = User::where('lastname', 'LIKE', '%'.$request->input('search').'%')->orderBy('id', 'asc')->paginate(25);
-            endswitch;
-            $data = ['users' => $users];
-            return view('admin.users.user_search', $data);
-        endif;
-    }
+
+    // public function postUserSearch(Request $request){
+    //     $rules = [
+    //         'search' => 'required',
+    //     ];
+
+    //     $messages = [
+    //         'search.required' => 'El campo consulta es requerido.',
+    //     ];
+
+    //     $validator = Validator::make($request->all(), $rules, $messages);
+    //     if($validator->fails()):
+    //         return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger');
+    //     else:
+    //         switch ($request->input('filter')):
+    //             case '0':
+    //                 $users = User::where('name', 'LIKE', '%'.$request->input('search').'%')->orderBy('id', 'asc')->paginate(25);
+    //                 break;
+    //             case '1':
+    //                 $users = User::where('lastname', 'LIKE', '%'.$request->input('search').'%')->orderBy('id', 'asc')->paginate(25);
+    //         endswitch;
+    //         $data = ['users' => $users];
+    //         return view('admin.users.user_search', $data);
+    //     endif;
+    // }
 
 
 

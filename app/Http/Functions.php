@@ -31,7 +31,7 @@ function getRoleUserArray($mode, $id){
 function getUserStatusArray($mode, $id){
 	$status = [
 		'1' => 'Activo',
-		'100' => 'Inactivo'
+		'100' => 'Suspendido'
 	];
 
 	if(!is_null($mode)):

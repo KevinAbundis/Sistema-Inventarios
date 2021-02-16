@@ -75,16 +75,6 @@
 					</div>
 				</div>
 
-				{{-- <div class="col-md-4">
-						<label for="password">Contraseña:</label>
-							<div class="input-group">
-		    						<span class="input-group-text" id="basic-addon1">
-		    							<i class="fas fa-keyboard"></i>
-		    						</span>
-							{!!Form::password('password', ['class' => 'form-control'])!!}
-						</div>
-				</div> --}}
-
 			</div>
 
 
