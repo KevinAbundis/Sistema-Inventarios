@@ -47,7 +47,7 @@
 								</a>
 								<ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
 									<li>
-										<a class="dropdown-item" href="{{ url('/account/edit') }}">
+										<a class="dropdown-item" href="{{ url('admin/account/edit') }}">
 											<i class="fas fa-address-card"></i> 	Editar Perfil
 										</a>
 									</li>

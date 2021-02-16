@@ -25,7 +25,7 @@
 			{{-- @endif --}}
 			{{-- @if(kvfj(Auth::user()->permissions, 'user_list')) --}}
 			<li>
-				<a href="{{ url('/admin/users/all') }}" class="lk-user_list lk-user_add lk-user_edit lk-user_search"><i class="fas fa-user-friends"></i>Usuarios</a>
+				<a href="{{ url('/admin/users/all') }}" class="lk-user_list lk-user_add lk-user_edit lk-user_search lk-account_edit"><i class="fas fa-user-friends"></i>Usuarios</a>
 			</li>
 			{{-- @endif --}}
 		</ul>

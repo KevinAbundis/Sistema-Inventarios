@@ -103,6 +103,11 @@ class UsersController extends Controller
         endif;
     }
 
+    public function getAccountEdit(){
+        return view('admin.users.account_edit');
+    }
+
+
 
 
 
