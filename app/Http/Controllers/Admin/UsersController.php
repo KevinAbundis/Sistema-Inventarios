@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Validator, Hash, Auth, Mail, Str;
+use Validator, Image, Hash, Auth, Mail, Str, Config;
 use App\Models\User;
 
 class UsersController extends Controller
@@ -107,7 +107,60 @@ class UsersController extends Controller
         return view('admin.users.account_edit');
     }
 
+    public function postAccountAvatar(Request $request){
+    	$rules = [
+            'avatar' => 'required',
+        ];
 
+        $messages = [
+            'avatar.required' => 'Seleccione una imagen.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()):
+            return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger')->withInput();
+        else:
+        	if($request->hasFile('avatar')):
+                //Esto sirve para guardar la imagen del producto
+        		$path = Auth::id();
+        		$fileExt = trim($request->file('avatar')->getClientOriginalExtension());
+        		$upload_path = Config::get('filesystems.disks.uploads_user.root');
+        		$name = Str::slug(str_replace($fileExt, '', $request->file('avatar')->getClientOriginalName()));
+
+        		$filename = rand(1,999).'_'.$name.'.'.$fileExt;
+        		$file_file = $upload_path.'/'.$path.'/'.$filename;
+
+        		$u = User::find(Auth::id());
+        		$aa = $u->avatar;
+        		$u->avatar = $filename;
+
+        		$filename1 = $upload_path.'/'.$path.'/'.$aa;
+        		$filename2 = $upload_path.'/'.$path.'/av_'.$aa;
+
+        		if(file_exists($filename1)):
+        			unlink($filename1);
+        		endif;
+
+        		if(file_exists($filename2)):
+        			unlink($filename2);
+        		endif;
+
+        		if($u->save()):
+        			if($request->hasFile('avatar')):
+        				$fl = $request->avatar->storeAs($path, $filename, 'uploads_user');
+
+        				$img = Image::make($file_file);
+        				$img->fit(256, 256, function($constraint){
+        					$constraint->upsize();
+        				});
+        				$img->save($upload_path.'/'.$path.'/av_'.$filename);
+        			endif;
+        			return back()->with('message','Avatar actualizado con éxito.')->with('typealert','success');
+        		endif;
+        	endif;
+
+        endif;
+    }
 
 
 

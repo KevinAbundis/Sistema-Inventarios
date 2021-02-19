@@ -1,10 +1,31 @@
-var base = location.protocol+'//'+location.host;
-var route = document.getElementsByName('routeName')[0].getAttribute('content');
+const base = location.protocol+'//'+location.host;
+const route = document.getElementsByName('routeName')[0].getAttribute('content');
 
 document.addEventListener('DOMContentLoaded', function(){
 
 	var btn_search = document.getElementById('btn_search');
 	var form_search = document.getElementById('form_search');
+	var form_avatar_change = document.getElementById('form_avatar_change');
+	var btn_avatar_edit = document.getElementById('btn_avatar_edit');
+	var avatar_change_overlay = document.getElementById('avatar_change_overlay');
+	var input_file_avatar = document.getElementById('input_file_avatar');
+
+	if(btn_avatar_edit){
+		btn_avatar_edit.addEventListener('click', function(e){
+			e.preventDefault();
+			input_file_avatar.click();
+		})
+	}
+
+	if(input_file_avatar){
+		input_file_avatar.addEventListener('change', function(){
+			var load_img = '<img src="'+base+'/static/images/loader_white.svg"/>';
+			avatar_change_overlay.innerHTML = load_img;
+			avatar_change_overlay.style.display = 'flex';
+			form_avatar_change.submit();
+		})
+	}
+
 	if(btn_search){
 		btn_search.addEventListener('click', function(e){
 			e.preventDefault();
@@ -37,20 +58,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 });
 
-$(document).ready(function(){
-	editor_init('editor');
-
-});
-
-function editor_init(field){
-	CKEDITOR.replace(field,{
-		toolbar: [
-		{ name: 'clipboard', items: [ 'Cut', 'Copy', 'Paste', 'PasteText', '-', 'Undo', 'Redo'] },
-		{ name: 'basicstyles', items: [ 'Bold', 'Italic', 'BulletedList', 'Strike', 'Image', 'Link', 'Unlink', 'Blockquote'] },
-		{ name: 'document', item: ['CodeSnippet', 'EmojiPanel', 'Preview', 'Source'] }
-		]
-	});
-}
 
 //Función para eliminar producto
 function delete_object(e){

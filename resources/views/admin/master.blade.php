@@ -47,7 +47,7 @@
 								</a>
 								<ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
 									<li>
-										<a class="dropdown-item" href="{{ url('admin/account/edit') }}">
+										<a class="dropdown-item" href="{{ url('/admin/account/edit') }}">
 											<i class="fas fa-address-card"></i> 	Editar Perfil
 										</a>
 									</li>
@@ -79,7 +79,7 @@
 
 					@if(Session::has('message'))
 					<div class="container-fluid">
-					<div class="alert alert-{{ Session::get('typealert') }} mtop16" style="display:block; margin-bottom: 16px;">
+					<div class="alert alert-{{ Session::get('typealert') }} mtop16" role="alert" style="display:block; margin-bottom: 16px;">
 						{{ Session::get('message') }}
 						@if($errors->any())
 						<ul>
@@ -88,10 +88,6 @@
 							@endforeach
 						</ul>
 						@endif
-						<script>
-							$('.alert').slideDown();
-							setTimeout(function(){ $('.alert').slideUp(); }, 10000);
-						</script>
 					</div>
 				</div>
 				@endif
@@ -107,23 +103,25 @@
 		</div>
 	</div>
 
-	@section('js')
-
-	@show
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://kit.fontawesome.com/f672163810.js" crossorigin="anonymous"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<script src="{{url('/static/js/admin.js?v='.time()) }}"></script>
-
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+  	<script src="{{url('/static/js/admin.js?v='.time()) }}"></script>
 	<script>
 		$(document).ready(function(){
 			 $('[data-toggle="tooltip"]').tooltip()
 		});
 	</script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  	<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+	<script>
+		$('.alert').slideDown();
+		setTimeout(function(){ $('.alert').slideUp(); }, 4000);
+	</script>
+	@section('js')
 
-
+	@show
 </body>
 </html>

@@ -42,6 +42,16 @@ return [
             'visibility' => 'public',
         ],
 
+        'uploads' => [
+            'driver' => 'local',
+            'root' => 'C:/www/sistema-inventarios/public/uploads',
+        ],
+
+        'uploads_user' => [
+            'driver' => 'local',
+            'root' => 'C:/www/sistema-inventarios/public/uploads_users',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),

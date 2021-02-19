@@ -97,7 +97,7 @@
 							@foreach($users as $user)
 							<tr>
 								<td>{{ $user->id }}</td>
-								<td width="50">
+								<td width="10px">
 									@if(is_null($user->avatar))
 									<img src="{{ url('/static/images/avatar.png') }}" class="img-fluid rounded-circle">
 									@else
@@ -153,7 +153,6 @@
 @endsection
 
 @section('js')
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 	<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
 	<script src="https://cdn.datatables.net/responsive/2.2.7/js/dataTables.responsive.min.js"></script>
@@ -167,7 +166,7 @@
             			   '<select class="custom-select  form-control" style="width: 85px;"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="-1">Todos</option></select>' +
             			   " registros por página",
             "zeroRecords": "No se encontraron resultados",
-            "info": "Mostrando la página _PAGE_ de _PAGES_",
+            "info": "Mostrando página _PAGE_ de _PAGES_",
             "infoEmpty": "Registros no disponibles",
             "infoFiltered": "(filtrado de _MAX_ registros totales)",
             "search": "Buscar",
