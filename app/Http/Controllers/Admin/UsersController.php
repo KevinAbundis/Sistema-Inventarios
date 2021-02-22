@@ -162,6 +162,39 @@ class UsersController extends Controller
         endif;
     }
 
+    public function postAccountPassword(Request $request){
+        $rules = [
+            'apassword' => 'required|min:8',
+            'password' => 'required|min:8',
+            'cpassword' => 'required|min:8|same:password',
+        ];
+
+        $messages = [
+            'apassword.required' => 'Contraseña actual es requerido.',
+            'apassword.min' => 'La contraseña actual debe tener al menos 8 caracteres.',
+            'password.required' => 'Nueva contraseña es requerido.',
+            'password.min' => 'La nueva contraseña debe tener al menos 8 caracteres.',
+            'cpassword.required' => 'Confirmar nueva contraseña es requerido.',
+            'cpassword.min' => 'La confirmación de la nueva contraseña debe tener al menos 8 caracteres.',
+            'cpassword.same' => 'Las contraseñas no coinciden.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()):
+            return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger')->withInput();
+        else:
+            $u = User::find(Auth::id());
+            if(Hash::check($request->input('apassword'), $u->password)):
+                $u->password = Hash::make($request->input('password'));
+                if($u->save()):
+                    return back()->with('message','Su contraseña fue actualizada con éxito.')->with('typealert','success');
+                endif;
+            else:
+                return back()->with('message','Su contraseña actual no es correcta.')->with('typealert','danger');
+            endif;
+        endif;
+    }
+
 
 
     // public function postUserSearch(Request $request){

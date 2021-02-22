@@ -12,6 +12,7 @@ Route::prefix('/admin')->group(function(){
 
 	Route::get('/account/edit', 'Admin\UsersController@getAccountEdit')->name('account_edit');
 	Route::post('/account/edit/avatar', 'Admin\UsersController@postAccountAvatar')->name('account_avatar_edit');
+	Route::post('/account/edit/password', 'Admin\UsersController@postAccountPassword')->name('account_password_edit');
 	// Route::post('/user/search', 'Admin\UsersController@postUserSearch')->name('user_search');
 
 

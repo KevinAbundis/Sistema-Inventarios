@@ -67,7 +67,7 @@
 						</div>
 
 						<div class="col-md-4">
-							<label for="cpassword">Confirmar Contraseña: </label>
+							<label for="cpassword">Confirmar Nueva Contraseña: </label>
 							<div class="input-group">
 								<span class="input-group-text" id="basic-addon1">
 									<i class="fas fa-keyboard"></i>
