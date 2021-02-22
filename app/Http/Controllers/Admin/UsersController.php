@@ -195,6 +195,30 @@ class UsersController extends Controller
         endif;
     }
 
+    public function postAccountInfo(Request $request){
+        $rules = [
+            'name' => 'required',
+            'lastname' => 'required',
+        ];
+
+        $messages = [
+            'name.required' => 'Su nombre es requerido.',
+            'lastname.required' => 'Sus apellidos son requeridos.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()):
+            return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger')->withInput();
+        else:
+             $u = User::find(Auth::id());
+             $u->name = e($request->input('name'));
+             $u->lastname = e($request->input('lastname'));
+             if($u->save()):
+                return back()->with('message','Su información fue actualizada con éxito.')->with('typealert','success');
+                endif;
+        endif;
+    }
+
 
 
     // public function postUserSearch(Request $request){
