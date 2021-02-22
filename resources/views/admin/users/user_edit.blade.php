@@ -27,7 +27,7 @@
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-							{!!Form::text('name', $user->name, ['class' => 'form-control'])!!}
+							{!!Form::text('name', $user->name, ['class' => 'form-control', 'required'])!!}
 						</div>
 				</div>
 
@@ -37,7 +37,7 @@
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-							{!!Form::text('lastname', $user->lastname, ['class' => 'form-control'])!!}
+							{!!Form::text('lastname', $user->lastname, ['class' => 'form-control', 'required'])!!}
 						</div>
 				</div>
 
@@ -47,7 +47,7 @@
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-							{!!Form::email('email', $user->email, ['class' => 'form-control'])!!}
+							{!!Form::email('email', $user->email, ['class' => 'form-control', 'required'])!!}
 						</div>
 				</div>
 

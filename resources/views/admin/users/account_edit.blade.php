@@ -52,7 +52,7 @@
 								<span class="input-group-text" id="basic-addon1">
 									<i class="fas fa-keyboard"></i>
 								</span>
-								{!!Form::password('apassword',  ['class' => 'form-control'])!!}
+								{!!Form::password('apassword',  ['class' => 'form-control', 'required'])!!}
 							</div>
 						</div>
 
@@ -62,7 +62,7 @@
 								<span class="input-group-text" id="basic-addon1">
 									<i class="fas fa-keyboard"></i>
 								</span>
-								{!!Form::password('password',  ['class' => 'form-control'])!!}
+								{!!Form::password('password',  ['class' => 'form-control', 'required'])!!}
 							</div>
 						</div>
 
@@ -72,7 +72,7 @@
 								<span class="input-group-text" id="basic-addon1">
 									<i class="fas fa-keyboard"></i>
 								</span>
-								{!!Form::password('cpassword',  ['class' => 'form-control'])!!}
+								{!!Form::password('cpassword',  ['class' => 'form-control', 'required'])!!}
 							</div>
 						</div>
 					</div>
@@ -109,7 +109,7 @@
 								<span class="input-group-text" id="basic-addon1">
 									<i class="fas fa-keyboard"></i>
 								</span>
-								{!!Form::text('name', Auth::user()->name, ['class' => 'form-control'])!!}
+								{!!Form::text('name', Auth::user()->name, ['class' => 'form-control', 'required'])!!}
 							</div>
 						</div>
 
@@ -119,7 +119,7 @@
 								<span class="input-group-text" id="basic-addon1">
 									<i class="fas fa-keyboard"></i>
 								</span>
-								{!!Form::text('lastname', Auth::user()->lastname, ['class' => 'form-control'])!!}
+								{!!Form::text('lastname', Auth::user()->lastname, ['class' => 'form-control', 'required'])!!}
 							</div>
 						</div>
 

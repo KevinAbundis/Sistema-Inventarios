@@ -36,7 +36,7 @@
 			 <div class="input-group-prepend">
 	          <div class="input-group-text"><i class="far fa-envelope"></i></div>
 	        </div>
-		{!! Form::email('email', null, ['class' => 'form-control']) !!}
+		{!! Form::email('email', null, ['class' => 'form-control', 'required']) !!}
 		</div>
 
 		<label for="password" class="mtop16">Contraseña:</label>
@@ -44,7 +44,7 @@
 			 <div class="input-group-prepend">
 	          <div class="input-group-text"><i class="fas fa-lock"></i></div>
 	        </div>
-		{!! Form::password('password', ['class' => 'form-control']) !!}
+		{!! Form::password('password', ['class' => 'form-control', 'required']) !!}
 		</div>
 
 		{!! Form::submit('Ingresar',['class' => 'btn btn-success mtop16']) !!}
