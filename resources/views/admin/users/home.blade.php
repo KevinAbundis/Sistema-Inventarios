@@ -20,7 +20,7 @@
 		<div class="header">
 			<h2 class="title"><i class="fas fa-user-friends"></i>	Usuarios</h2>
 			<ul>
-				@if(Auth::user()->role == "1")
+				@if(kvfj(Auth::user()->permissions, 'user_add'))
 				<li>
 					<a href="{{ url('/admin/user/add') }}">
 						<i class="fas fa-plus-circle"></i>	Agregar Usuario
@@ -112,29 +112,18 @@
 								{{-- <td>{{ $user->created_at }}</td> --}}
 								<td>
 									<div class="opts">
-										{{-- @if(kvfj(Auth::user()->permissions, 'user_edit')) --}}
+										@if(kvfj(Auth::user()->permissions, 'user_edit'))
 										<a href="{{ url('/admin/user/'.$user->id.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar">
 											<i class="fas fa-edit"></i>
 										</a>
-										{{-- @endif --}}
+										@endif
 
-										{{-- @if(kvfj(Auth::user()->permissions, 'user_permissions')) --}}
+										@if(kvfj(Auth::user()->permissions, 'user_permissions'))
 										<a href="{{ url('/admin/user/'.$user->id.'/permissions') }}" data-toggle="tooltip" data-placement="top" title="Permisos de Usuario">
 											<i class="fas fa-user-cog"></i>
 										</a>
-										{{-- @endif --}}
+										@endif
 
-										{{-- @if(kvfj(Auth::user()->permissions, 'product_delete')) --}}
-											{{-- @if(is_null($user->deleted_at))
-												<a href="#" data-path="admin/product" data-action="delete" data-object="{{ $user->id }}" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn-deleted">
-												<i class="fas fa-trash-alt"></i>
-												</a>
-											@else
-												<a href="{{ url('/admin/user/'.$user->id.'/restore') }}" data-path="admin/product" data-action="restore" data-object="{{ $p->id }}" data-toggle="tooltip" data-placement="top" title="Restaurar" class="btn-deleted">
-												<i class="fas fa-trash-restore"></i>
-												</a>
-											@endif --}}
-										{{-- @endif --}}
 									</div>
 								</td>
 							</tr>

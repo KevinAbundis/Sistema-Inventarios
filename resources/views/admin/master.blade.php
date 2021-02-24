@@ -48,11 +48,13 @@
 									@endif {{ Auth::user()->name }}
 								</a>
 								<ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+									@if(kvfj(Auth::user()->permissions, 'account_edit'))
 									<li>
 										<a class="dropdown-item" href="{{ url('/admin/account/edit') }}">
 											<i class="fas fa-address-card"></i> 	Editar Perfil
 										</a>
 									</li>
+									@endif
 
 									<li>
 										<a class="dropdown-item" href="{{ url('/logout') }}">

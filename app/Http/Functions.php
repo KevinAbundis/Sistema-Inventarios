@@ -58,11 +58,15 @@ function user_permissions(){
 			'icon' => '<i class="fas fa-user-friends"></i>',
 			'title' => 'Módulo de Usuarios',
 			'keys' =>[
-				'user_list' => 'Puede ver el listado de usuarios.',
-				'user_edit' => 'Puede editar los usuarios.',
-				'user_permissions' => 'Puede administrar permisos de usuarios.',
+				'user_list' => 'Puede ver el listado de usuarios del sistema.',
+				'account_edit' => 'Puede editar su perfil de usuario.',
+				'user_add' => 'Puede agregar usuarios al sistema.',
+				'user_edit' => 'Puede editar los usuarios del sistema.',
+				'user_permissions' => 'Puede administrar permisos de los usuarios del sistema.',
 			]
 		],
+
+
 
 
 

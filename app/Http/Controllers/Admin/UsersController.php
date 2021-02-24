@@ -11,8 +11,9 @@ class UsersController extends Controller
 {
     public function __construct(){
     	$this->middleware('auth');
-    	$this->middleware('isadmin');
         $this->middleware('user.status');
+        $this->middleware('user.permissions');
+        $this->middleware('isadmin');
     }
 
     public function getUsers(){
@@ -59,6 +60,16 @@ class UsersController extends Controller
     		$user->role = $request->input('user_type');
     		$user->status = $request->input('user_status');
     		$user->password = Hash::make($request->input('password'));
+
+            //Se le agregan estos permisos por defecto a un usuario normal
+            if($user->role == "0"):
+            $user->permissions = '{"dashboard":"true","dashboard_small_stats":"true","user_list":"true","account_edit":"true"}';
+            else:
+                //Se le agregan estos permisos por defecto a un usuario administrador
+                $user->permissions = '{"dashboard":"true","dashboard_small_stats":"true","user_list":"true","account_edit":"true","user_add":"true","user_edit":"true","user_permissions":"true"}';
+            endif;
+
+
     		if($user->save()):
     			return redirect('/admin/users/all')->with('message','Usuario agregado con éxito.')->with('typealert','success');
     		endif;
@@ -223,6 +234,15 @@ class UsersController extends Controller
         $u = User::findOrFail($id);
         $data = ['u' => $u];
         return view('admin.users.user_permissions', $data);
+    }
+
+    public function postUserPermissions(Request $request, $id){
+        $u = User::findOrFail($id);
+        $u->permissions = $request->except(['_token']);
+
+        if($u->save()):
+            return redirect('/admin/users/all')->with('message', 'Los permisos del usuario fueron actualizados con éxito.')->with('typealert','success');
+        endif;
     }
 
 

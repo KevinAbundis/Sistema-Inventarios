@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="container-fluid">
-	{{-- @if(kvfj(Auth::user()->permissions, 'dashboard_small_stats')) --}}
+	@if(kvfj(Auth::user()->permissions, 'dashboard_small_stats'))
 	<div class="panel shadow">
 		<div class="header">
 			<h2 class="title"><i class="fas fa-chart-bar"></i>	Estadísticas rápidas</h2>
@@ -119,7 +119,7 @@
 		</div>
 
 	</div>
-	{{-- @endif --}}
+	@endif
 
 
 </div>
