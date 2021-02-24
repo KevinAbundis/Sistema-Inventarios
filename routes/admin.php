@@ -9,6 +9,8 @@ Route::prefix('/admin')->group(function(){
 	Route::post('/user/add', 'Admin\UsersController@postUserAdd')->name('user_add');
 	Route::get('/user/{id}/edit','Admin\UsersController@getUserEdit')->name('user_edit');
 	Route::post('/user/{id}/edit','Admin\UsersController@postUserEdit')->name('user_edit');
+	Route::get('/user/{id}/permissions','Admin\UsersController@getUserPermissions')->name('user_permissions');
+
 	Route::get('/account/edit', 'Admin\UsersController@getAccountEdit')->name('account_edit');
 	Route::post('/account/edit/avatar', 'Admin\UsersController@postAccountAvatar')->name('account_avatar_edit');
 	Route::post('/account/edit/password', 'Admin\UsersController@postAccountPassword')->name('account_password_edit');

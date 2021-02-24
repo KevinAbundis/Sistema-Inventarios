@@ -46,11 +46,10 @@ function user_permissions(){
 
 		'dashboard' => [
 			'icon' => '<i class="fas fa-home"></i>',
-			'title' => 'Módulo de Dashboard',
+			'title' => 'Módulo de Inicio',
 			'keys' =>[
 				'dashboard' => 'Puede ver el dashboard.',
 				'dashboard_small_stats' => 'Puede ver las estadísticas rápidas.',
-				'dashboard_sell_today' => 'Puede ver lo facturado hoy.',
 			]
 		],
 
@@ -61,7 +60,6 @@ function user_permissions(){
 			'keys' =>[
 				'user_list' => 'Puede ver el listado de usuarios.',
 				'user_edit' => 'Puede editar los usuarios.',
-				'user_banned' => 'Puede suspender los usuarios.',
 				'user_permissions' => 'Puede administrar permisos de usuarios.',
 			]
 		],

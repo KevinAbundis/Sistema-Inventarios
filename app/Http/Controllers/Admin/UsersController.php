@@ -219,6 +219,12 @@ class UsersController extends Controller
         endif;
     }
 
+    public function getUserPermissions($id){
+        $u = User::findOrFail($id);
+        $data = ['u' => $u];
+        return view('admin.users.user_permissions', $data);
+    }
+
 
 
     // public function postUserSearch(Request $request){
