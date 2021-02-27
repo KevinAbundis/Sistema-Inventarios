@@ -32,14 +32,14 @@
 						<i class="fas fa-search"></i>	Buscar
 					</a>
 				</li> --}}
-				{{-- <li>
+				<li>
 					<a href="#"> Filtrar <i class="fas fa-angle-down"></i></a>
 					<ul class="shadow">
 						<li><a href="{{ url('/admin/users/all') }}"><i class="fas fa-stream"></i> Todos</a></li>
 						<li><a href="{{ url('/admin/users/1') }}"><i class="fas fa-user-check"></i> Activos</a></li>
 						<li><a href="{{ url('/admin/users/100') }}"><i class="fas fa-heart-broken"></i> Suspendidos</a></li>
 					</ul>
-				</li> --}}
+				</li>
 			</ul>
 		</div>
 
