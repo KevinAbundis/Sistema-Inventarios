@@ -48,8 +48,7 @@ function user_permissions(){
 			'icon' => '<i class="fas fa-home"></i>',
 			'title' => 'Módulo de Inicio',
 			'keys' =>[
-				'dashboard' => 'Puede ver el dashboard.',
-				'dashboard_small_stats' => 'Puede ver las estadísticas rápidas.',
+				'dashboard' => 'Puede ver el inicio.',
 			]
 		],
 
@@ -63,6 +62,38 @@ function user_permissions(){
 				'user_add' => 'Puede agregar usuarios al sistema.',
 				'user_edit' => 'Puede editar los usuarios del sistema.',
 				'user_permissions' => 'Puede administrar permisos de los usuarios del sistema.',
+			]
+		],
+
+		'equipment' => [
+			'icon' => '<i class="fas fa-boxes"></i>',
+			'title' => 'Módulo de Equipos de Cómputo',
+			'keys' =>[
+				'equipment_home' => 'Puede ver los diferentes equipos de cómputo.',
+			]
+		],
+
+		'repair' => [
+			'icon' => '<i class="fas fa-tools"></i>',
+			'title' => 'Módulo de Reparación de Equipos de Cómputo',
+			'keys' =>[
+				'repair_home' => 'Puede ver los equipos de cómputo en reparación.',
+			]
+		],
+
+		'maintenance' => [
+			'icon' => '<i class="fas fa-toolbox"></i>',
+			'title' => 'Módulo de Mantenimiento de Equipos de Cómputo',
+			'keys' =>[
+				'maintenance_home' => 'Puede ver los mantenimientos de los equipos de cómputo.',
+			]
+		],
+
+		'reports' => [
+			'icon' => '<i class="fas fa-file-contract"></i>',
+			'title' => 'Módulo de Reportes',
+			'keys' =>[
+				'reports_home' => 'Puede ver los reportes.',
 			]
 		],
 

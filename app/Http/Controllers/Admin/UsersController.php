@@ -242,7 +242,7 @@ class UsersController extends Controller
         $u->permissions = $request->except(['_token']);
 
         if($u->save()):
-            return redirect('/admin/users/all')->with('message', 'Los permisos del usuario fueron actualizados con éxito.')->with('typealert','success');
+            return back()->with('message', 'Los permisos del usuario fueron actualizados con éxito.')->with('typealert','success');
         endif;
     }
 

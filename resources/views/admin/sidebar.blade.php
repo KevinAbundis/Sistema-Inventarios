@@ -28,6 +28,30 @@
 				<a href="{{ url('/admin/users/all') }}" class="lk-user_list lk-user_add lk-user_edit lk-user_search lk-account_edit lk-user_permissions"><i class="fas fa-user-friends"></i>Usuarios</a>
 			</li>
 			@endif
+			@if(kvfj(Auth::user()->permissions, 'equipment_home'))
+			<li>
+				<a href="{{ url('/admin/equipment') }}" class="lk-equipment_home">
+					<i class="fas fa-boxes"></i>Equipos de Cómputo</a>
+			</li>
+			@endif
+			@if(kvfj(Auth::user()->permissions, 'repair_home'))
+			<li>
+				<a href="{{ url('/admin/repair') }}" class="lk-repair_home">
+					<i class="fas fa-tools"></i>Reparación de Equipos de Cómputo</a>
+			</li>
+			@endif
+			@if(kvfj(Auth::user()->permissions, 'maintenance_home'))
+			<li>
+				<a href="{{ url('/admin/maintenance') }}" class="lk-maintenance_home">
+					<i class="fas fa-toolbox"></i>Mantenimiento de Equipos de Cómputo</a>
+			</li>
+			@endif
+			@if(kvfj(Auth::user()->permissions, 'reports_home'))
+			<li>
+				<a href="{{ url('/admin/reports') }}" class="lk-reports_home">
+					<i class="fas fa-file-contract"></i>Reportes</a>
+			</li>
+			@endif
 		</ul>
 	</div>
 </div>

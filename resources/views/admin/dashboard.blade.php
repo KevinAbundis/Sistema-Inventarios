@@ -4,7 +4,6 @@
 
 @section('content')
 <div class="container-fluid">
-	@if(kvfj(Auth::user()->permissions, 'dashboard_small_stats'))
 	<div class="panel shadow">
 		<div class="header">
 			<h2 class="title"><i class="fas fa-chart-bar"></i>	Estadísticas rápidas</h2>
@@ -110,6 +109,29 @@
 		<div class="col-md-3">
 			<div class="panel shadow">
 				<div class="header">
+					<h2 class="title"><i class="fas fa-hdd"></i>	Switches</h2>
+				</div>
+				<div class="inside">
+					<div class="big_count">0</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="panel shadow">
+				<div class="header">
+					<h2 class="title"><i class="fas fa-wifi"></i>	Modems</h2>
+				</div>
+				<div class="inside">
+					<div class="big_count">0</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-md-3">
+			<div class="panel shadow">
+				<div class="header">
 					<h2 class="title"><i class="fas fa-server"></i>	Otros Equipos</h2>
 				</div>
 				<div class="inside">
@@ -118,8 +140,32 @@
 			</div>
 		</div>
 
+		<div class="col-md-3">
+			<div class="panel shadow">
+				<div class="header">
+					<h2 class="title"><i class="fas fa-tools"></i>	Equipos en Reparación</h2>
+				</div>
+				<div class="inside">
+					<div class="big_count">0</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
-	@endif
+
+	<div class="row mtop16">
+		<div class="col-md-3">
+			<div class="panel shadow">
+				<div class="header">
+					<h2 class="title"><i class="fas fa-toolbox"></i>	Mantenimientos Próximos</h2>
+				</div>
+				<div class="inside">
+					<div class="big_count">0</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
 
 
 </div>
