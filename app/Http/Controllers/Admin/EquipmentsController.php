@@ -24,7 +24,7 @@ class EquipmentsController extends Controller
             $equipments = Equipment::where('Tipo_Hardware', $filter)->get();
         endif;
     	$data = ['equipments' => $equipments];
-    	return view('admin.equipment.home', $data);
+    	return view('admin.equipments.home', $data);
     }
 
 

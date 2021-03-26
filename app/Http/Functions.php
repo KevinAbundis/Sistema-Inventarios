@@ -65,7 +65,7 @@ function user_permissions(){
 			]
 		],
 
-		'equipment' => [
+		'equipments' => [
 			'icon' => '<i class="fas fa-boxes"></i>',
 			'title' => 'Módulo de Equipos de Cómputo',
 			'keys' =>[
@@ -73,7 +73,7 @@ function user_permissions(){
 			]
 		],
 
-		'repair' => [
+		'repairs' => [
 			'icon' => '<i class="fas fa-tools"></i>',
 			'title' => 'Módulo de Reparación de Equipos de Cómputo',
 			'keys' =>[
@@ -81,7 +81,7 @@ function user_permissions(){
 			]
 		],
 
-		'maintenance' => [
+		'maintenances' => [
 			'icon' => '<i class="fas fa-toolbox"></i>',
 			'title' => 'Módulo de Mantenimiento de Equipos de Cómputo',
 			'keys' =>[
