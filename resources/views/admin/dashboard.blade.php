@@ -4,11 +4,11 @@
 
 @section('content')
 <div class="container-fluid">
-	<div class="panel shadow">
+	{{-- <div class="panel shadow">
 		<div class="header">
 			<h2 class="title"><i class="fas fa-chart-bar"></i>	Estadísticas rápidas</h2>
 		</div>
-	</div>
+	</div> --}}
 
 	<div class="row mtop16">
 		<div class="col-md-3">
@@ -81,7 +81,7 @@
 			</div>
 		</div>
 
-		<div class="col-md-3">
+		{{-- <div class="col-md-3">
 			<div class="panel shadow">
 				<div class="header">
 					<h2 class="title"><i class="fas fa-tint"></i>	Toners</h2>
@@ -90,7 +90,7 @@
 					<div class="big_count">0</div>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 
 		<div class="col-md-3">
 			<div class="panel shadow">
@@ -102,10 +102,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
-
-	<div class="row mtop16">
 		<div class="col-md-3">
 			<div class="panel shadow">
 				<div class="header">
@@ -116,7 +113,10 @@
 				</div>
 			</div>
 		</div>
+	</div>
 
+
+	<div class="row mtop16">
 		<div class="col-md-3">
 			<div class="panel shadow">
 				<div class="header">
@@ -151,13 +151,10 @@
 			</div>
 		</div>
 
-	</div>
-
-	<div class="row mtop16">
 		<div class="col-md-3">
 			<div class="panel shadow">
 				<div class="header">
-					<h2 class="title"><i class="fas fa-toolbox"></i>	Mantenimientos Próximos</h2>
+					<h2 class="title"><i class="fas fa-toolbox"></i>	Próximos Mantenimientos</h2>
 				</div>
 				<div class="inside">
 					<div class="big_count">0</div>
@@ -166,7 +163,6 @@
 		</div>
 
 	</div>
-
 
 </div>
 @endsection

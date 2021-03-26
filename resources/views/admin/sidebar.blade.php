@@ -28,27 +28,27 @@
 				<a href="{{ url('/admin/users/all') }}" class="lk-user_list lk-user_add lk-user_edit lk-user_search lk-account_edit lk-user_permissions"><i class="fas fa-user-friends"></i>Usuarios</a>
 			</li>
 			@endif
-			@if(kvfj(Auth::user()->permissions, 'equipment_home'))
+			@if(kvfj(Auth::user()->permissions, 'equipment_list'))
 			<li>
-				<a href="{{ url('/admin/equipment') }}" class="lk-equipment_home">
+				<a href="{{ url('/admin/equipments/all') }}" class="lk-equipment_list">
 					<i class="fas fa-boxes"></i>Equipos de Cómputo</a>
 			</li>
 			@endif
-			@if(kvfj(Auth::user()->permissions, 'repair_home'))
+			@if(kvfj(Auth::user()->permissions, 'repair_list'))
 			<li>
-				<a href="{{ url('/admin/repair') }}" class="lk-repair_home">
+				<a href="{{ url('/admin/repairs/all') }}" class="lk-repair_list">
 					<i class="fas fa-tools"></i>Reparación de Equipos de Cómputo</a>
 			</li>
 			@endif
-			@if(kvfj(Auth::user()->permissions, 'maintenance_home'))
+			@if(kvfj(Auth::user()->permissions, 'maintenance_list'))
 			<li>
-				<a href="{{ url('/admin/maintenance') }}" class="lk-maintenance_home">
+				<a href="{{ url('/admin/maintenances/all') }}" class="lk-maintenance_list">
 					<i class="fas fa-toolbox"></i>Mantenimiento de Equipos de Cómputo</a>
 			</li>
 			@endif
 			@if(kvfj(Auth::user()->permissions, 'reports_home'))
 			<li>
-				<a href="{{ url('/admin/reports') }}" class="lk-reports_home">
+				<a href="{{ url('/admin/reports/home') }}" class="lk-reports_home">
 					<i class="fas fa-file-contract"></i>Reportes</a>
 			</li>
 			@endif

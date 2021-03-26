@@ -69,7 +69,7 @@ function user_permissions(){
 			'icon' => '<i class="fas fa-boxes"></i>',
 			'title' => 'Módulo de Equipos de Cómputo',
 			'keys' =>[
-				'equipment_home' => 'Puede ver los diferentes equipos de cómputo.',
+				'equipment_list' => 'Puede ver el listado de los equipos de cómputo.',
 			]
 		],
 
@@ -77,7 +77,7 @@ function user_permissions(){
 			'icon' => '<i class="fas fa-tools"></i>',
 			'title' => 'Módulo de Reparación de Equipos de Cómputo',
 			'keys' =>[
-				'repair_home' => 'Puede ver los equipos de cómputo en reparación.',
+				'repair_list' => 'Puede ver el listado de los equipos de cómputo en reparación.',
 			]
 		],
 
@@ -85,7 +85,7 @@ function user_permissions(){
 			'icon' => '<i class="fas fa-toolbox"></i>',
 			'title' => 'Módulo de Mantenimiento de Equipos de Cómputo',
 			'keys' =>[
-				'maintenance_home' => 'Puede ver los mantenimientos de los equipos de cómputo.',
+				'maintenance_list' => 'Puede ver el listado de los mantenimientos a equipos de cómputo.',
 			]
 		],
 
