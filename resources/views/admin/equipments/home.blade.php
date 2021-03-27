@@ -23,14 +23,28 @@
 				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
 				<li>
 					<a href="{{ url('/admin/equipment/add') }}">
-						<i class="fas fa-plus-circle"></i>	Agregar Equipo de Cómputo
+						<i class="fas fa-plus-circle"></i>  Agregar Equipo
 					</a>
 				</li>
 				{{-- @endif --}}
 				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
 				<li>
 					<a href="{{ url('/admin/equipment/output') }}">
-						<i class="fas fa-external-link-square-alt"></i>	Salidas Equipos de Cómputo
+						<i class="fas fa-external-link-square-alt"></i>  Realizar Salida
+					</a>
+				</li>
+				{{-- @endif --}}
+				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
+				<li>
+					<a href="{{ url('/admin/equipment/PONER_ALGO') }}">
+						<i class="fas fa-toolbox"></i>  Programar Mantenimiento
+					</a>
+				</li>
+				{{-- @endif --}}
+				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
+				<li>
+					<a href="{{ url('/admin/equipment/PONER_ALGO') }}">
+						<i class="fas fa-tools"></i>  Mandar a Reparación
 					</a>
 				</li>
 				{{-- @endif --}}
