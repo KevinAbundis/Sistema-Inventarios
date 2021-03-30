@@ -30,7 +30,7 @@
 			@endif
 			@if(kvfj(Auth::user()->permissions, 'equipment_list'))
 			<li>
-				<a href="{{ url('/admin/equipments/all') }}" class="lk-equipment_list">
+				<a href="{{ url('/admin/equipments/all') }}" class="lk-equipment_list lk-equipment_add">
 					<i class="fas fa-boxes"></i>Equipos de Cómputo</a>
 			</li>
 			@endif

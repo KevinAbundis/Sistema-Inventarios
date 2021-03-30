@@ -41,6 +41,7 @@ function getUserStatusArray($mode, $id){
 	endif;
 }
 
+
 function user_permissions(){
 	$p = [
 
@@ -70,6 +71,7 @@ function user_permissions(){
 			'title' => 'Módulo de Equipos de Cómputo',
 			'keys' =>[
 				'equipment_list' => 'Puede ver el listado de los equipos de cómputo.',
+				'equipment_add' => 'Puede agregar equipos de cómputo al sistema.',
 			]
 		],
 

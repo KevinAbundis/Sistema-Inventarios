@@ -22,6 +22,8 @@ Route::prefix('/admin')->group(function(){
 
 	//MÓDULO DE EQUIPOS DE CÓMPUTO
 	Route::get('/equipments/{filter}','Admin\EquipmentsController@getEquipmentHome')->name('equipment_list');
+	Route::get('/equipment/add', 'Admin\EquipmentsController@getEquipmentAdd')->name('equipment_add');
+	Route::post('/equipment/add', 'Admin\EquipmentsController@postEquipmentAdd')->name('equipment_add');
 
 
 

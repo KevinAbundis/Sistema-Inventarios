@@ -34,20 +34,6 @@
 					</a>
 				</li>
 				{{-- @endif --}}
-				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
-				<li>
-					<a href="{{ url('/admin/equipment/PONER_ALGO') }}">
-						<i class="fas fa-toolbox"></i>  Programar Mantenimiento
-					</a>
-				</li>
-				{{-- @endif --}}
-				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
-				<li>
-					<a href="{{ url('/admin/equipment/PONER_ALGO') }}">
-						<i class="fas fa-tools"></i>  Mandar a Reparación
-					</a>
-				</li>
-				{{-- @endif --}}
 				<li>
 					<a href="#"> Filtrar <i class="fas fa-angle-down"></i></a>
 					<ul class="shadow">
