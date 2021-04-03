@@ -15,7 +15,7 @@ class CreateSalidasEquiposTable extends Migration
     {
         Schema::create('salidas_equipos', function (Blueprint $table) {
             $table->bigIncrements('Id_Salida');
-            $table->integer('Id_Usuario');
+            $table->string('Nombre_Usuario');
             $table->string('Descripcion');
             $table->string('Marca')->nullable();
             $table->string('Modelo')->nullable();

@@ -74,9 +74,9 @@
 							@foreach($equipments as $equipment)
 							<tr>
 								<td>{{ $equipment->Serie_Equipo }}</td>
-								<td>{{ $equipment->Id_Sucursal }}</td>
-								<td>{{ $equipment->Id_Departamento }}</td>
-								<td>{{ $equipment->Id_Ubicacion }}</td>
+								<td>{{ $equipment->Sucursal }}</td>
+								<td>{{ $equipment->Departamento }}</td>
+								<td>{{ $equipment->Ubicacion }}</td>
 								<td>{{ $equipment->Tipo_Hardware }}</td>
 								<td>{{ $equipment->Marca }}</td>
 								<td>{{ $equipment->Modelo }}</td>

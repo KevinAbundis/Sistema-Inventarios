@@ -15,9 +15,9 @@ class CreateEquiposTable extends Migration
     {
         Schema::create('equipos', function (Blueprint $table) {
             $table->string('Serie_Equipo')->primary();
-            $table->integer('Id_Sucursal');
-            $table->integer('Id_Departamento');
-            $table->integer('Id_Ubicacion');
+            $table->string('Sucursal');
+            $table->string('Departamento');
+            $table->string('Ubicacion')->nullable();
             $table->string('Tipo_Hardware');
             $table->string('Marca')->nullable();
             $table->string('Modelo')->nullable();

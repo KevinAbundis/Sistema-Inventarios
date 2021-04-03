@@ -36,17 +36,11 @@ class EquipmentsController extends Controller
     public function postEquipmentAdd(Request $request){
     	$rules = [
     		'Serie_Equipo' => 'required|unique:equipos',
-    		'Id_Sucursal' => 'required',
-    		'Id_Departamento' => 'required',
-    		'Id_Ubicacion' => 'required',
     	];
 
     	$messages = [
     		'Serie_Equipo.required' => 'Número de Serie es requerido.',
     		'Serie_Equipo.unique' => 'Ya existe un equipo registrado con este número de serie.',
-    		'Id_Sucursal.required' => 'Sucursal es requerido.',
-    		'Id_Departamento.required' => 'Departamento es requerido.',
-    		'Id_Ubicacion.required' => 'Ubicación es requerida.',
     	];
 
     	$validator = Validator::make($request->all(), $rules, $messages);
@@ -55,9 +49,9 @@ class EquipmentsController extends Controller
     	else:
     		$equipment = new Equipment;
     		$equipment->Serie_Equipo = e($request->input('Serie_Equipo'));
-    		$equipment->Id_Sucursal = e($request->input('Id_Sucursal'));
-    		$equipment->Id_Departamento = e($request->input('Id_Departamento'));
-    		$equipment->Id_Ubicacion = e($request->input('Id_Ubicacion'));
+    		$equipment->Sucursal = e($request->input('Sucursal'));
+    		$equipment->Departamento = e($request->input('Departamento'));
+    		$equipment->Ubicacion = e($request->input('Ubicacion'));
     		$equipment->Tipo_Hardware = e($request->input('Tipo_Hardware'));
     		$equipment->Marca = e($request->input('Marca'));
     		$equipment->Modelo = e($request->input('Modelo'));

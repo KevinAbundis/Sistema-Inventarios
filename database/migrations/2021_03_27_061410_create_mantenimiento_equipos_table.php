@@ -19,9 +19,9 @@ class CreateMantenimientoEquiposTable extends Migration
             $table->string('Serie_Equipo');
             $table->string('Marca')->nullable();
             $table->string('Modelo')->nullable();
-            $table->integer('Id_Sucursal');
-            $table->integer('Id_Departamento');
-            $table->integer('Id_Ubicacion');
+            $table->string('Sucursal');
+            $table->string('Departamento');
+            $table->string('Ubicacion');
             $table->date('Fecha_Programada');
             $table->string('Hora_Programada');
             $table->date('Fecha_Efectiva')->nullable();

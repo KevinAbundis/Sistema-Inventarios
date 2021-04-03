@@ -32,22 +32,31 @@
 				</div>
 
 				<div class="col-md-4">
-						<label for="Id_Sucursal">Sucursal: </label>
+						<label for="Sucursal">Sucursal: </label>
 							<div class="input-group">
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-							{!!Form::text('Id_Sucursal', null, ['class' => 'form-control', 'required'])!!}
+		    						{!!Form::select('Sucursal', ['Matriz' => 'Matriz', 'Chilpancingo' => 'Chilpancingo', 'Zihuatanejo' => 'Zihuatanejo', 'Diamante' => 'Diamante', 'Farallon' => 'Farallon', 'BuickGMC_Acapulco' => 'BuickGMC_Acapulco', 'BuickGMC_Chilpancingo' => 'BuickGMC_Chilpancingo'], 0, ['class' => 'form-select'])!!}
+		    						{{-- <select class="form-select" name="Id_Sucursal" id="" >
+		    							@foreach($branchoffices as $branchoffice)
+			    							<option value="{{$branchoffice->Id_Sucursal}}">
+			    								{{$branchoffice->Nombre_Sucursal}}
+			    							</option>
+		    							@endforeach
+		    						</select> --}}
+									{{-- {!!Form::select('Tipo_Hardware', $branchoffices, 0, ['class' => 'form-select'])!!} --}}
 						</div>
 				</div>
 
 				<div class="col-md-4">
-						<label for="Id_Departamento">Departamento: </label>
+						<label for="Departamento">Departamento: </label>
 							<div class="input-group">
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-							{!!Form::text('Id_Departamento', null, ['class' => 'form-control', 'required'])!!}
+		    						{!!Form::select('Departamento', ['Gerencia' => 'Gerencia', 'Ventas' => 'Ventas', 'Contabilidad' => 'Contabilidad', 'BDC_Ventas' => 'BDC_Ventas', 'SuAuto' => 'SuAuto', 'CRM_PosVenta' => 'CRM_PosVenta', 'Refacciones' => 'Refacciones', 'Servicio' => 'Servicio', 'Caja' => 'Caja', 'Sistemas' => 'Sistemas', 'Capacitacion' => 'Capacitacion', 'Otros_Equipamentos' => 'Otros_Equipamentos', 'Almacen' => 'Almacen', 'Reparacion' => 'Reparacion'], 0, ['class' => 'form-select'])!!}
+
 						</div>
 				</div>
 			</div>
@@ -55,12 +64,13 @@
 			<div class="row mtop16">
 
 				<div class="col-md-4">
-					<label for="Id_Ubicacion">Ubicación: </label>
+					<label for="Ubicacion">Ubicación: </label>
 					<div class="input-group">
 						<span class="input-group-text" id="basic-addon1">
 							<i class="fas fa-keyboard"></i>
 						</span>
-						{!!Form::text('Id_Ubicacion', null, ['class' => 'form-control', 'required'])!!}
+						{!!Form::text('Ubicacion', null, ['class' => 'form-control', 'required'])!!}
+
 					</div>
 				</div>
 
@@ -70,8 +80,8 @@
 						<span class="input-group-text" id="basic-addon1">
 							<i class="fas fa-keyboard"></i>
 						</span>
-						{!!Form::text('Tipo_Hardware', null, ['class' => 'form-control', 'required'])!!}
-						{{-- {!!Form::select('Tipo_Hardware', getKindOfEquipmentArray('list', null), 0, ['class' => 'form-select'])!!} --}}
+						{{-- {!!Form::text('Tipo_Hardware', null, ['class' => 'form-control', 'required'])!!} --}}
+						{!!Form::select('Tipo_Hardware', ['CPU' => 'CPU', 'Monitor' => 'Monitor', 'Teclado' => 'Teclado', 'Raton' => 'Raton', 'Impresora' => 'Impresora', 'Telefono' => 'Telefono', 'Switch' => 'Switch', 'Modem' => 'Modem', 'Laptop' => 'Laptop', 'Otro_Equipo' => 'Otro_Equipo'], 0, ['class' => 'form-select'])!!}
 					</div>
 				</div>
 
@@ -81,7 +91,7 @@
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-							{!!Form::text('Marca', null, ['class' => 'form-control'])!!}
+							{!!Form::text('Marca', null, ['class' => 'form-control', 'required'])!!}
 						</div>
 				</div>
 			</div>

@@ -21,9 +21,9 @@ class CreateReparacionEquiposTable extends Migration
             $table->string('Service_Code')->nullable();
             $table->string('Marca')->nullable();
             $table->string('Modelo')->nullable();
-            $table->integer('Id_Sucursal');
-            $table->integer('Id_Departamento');
-            $table->integer('Id_Ubicacion');
+            $table->string('Sucursal');
+            $table->string('Departamento');
+            $table->string('Ubicacion');
             $table->date('Fecha_Salida');
             $table->string('Firma_Salida');
             $table->text('Motivo_Salida');
