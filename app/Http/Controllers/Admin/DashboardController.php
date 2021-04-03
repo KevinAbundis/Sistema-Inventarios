@@ -26,6 +26,7 @@ class DashboardController extends Controller
         $telefonos = Equipment::where('Tipo_Hardware', 'Telefono')->count();
         $switches = Equipment::where('Tipo_Hardware', 'Switch')->count();
         $modems = Equipment::where('Tipo_Hardware', 'Modem')->count();
+        $laptops = Equipment::where('Tipo_Hardware', 'Laptop')->count();
         $otrosequipos = Equipment::where('Tipo_Hardware', 'Otro_Equipo')->count();
 
     	$data =
@@ -39,6 +40,7 @@ class DashboardController extends Controller
             'telefonos' => $telefonos,
             'switches' => $switches,
             'modems' => $modems,
+            'laptops' => $laptops,
             'otrosequipos' => $otrosequipos,
         ];
 

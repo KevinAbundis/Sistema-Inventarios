@@ -46,7 +46,7 @@ class UsersController extends Controller
     		'lastname.required' => 'Sus apellidos son requeridos.',
     		'email.required' => 'Su correo electrónico es requerido.',
     		'email.email' => 'El formato de su correo electrónico es invalido.',
-    		'email,unique' => 'Ya existe un usuario registrado con este correo electrónico.',
+    		'email.unique' => 'Ya existe un usuario registrado con este correo electrónico.',
     		'password.required' => 'Por favor escriba una contraseña.',
     		'password.min' => 'La contraseña debe de tener al menos 8 caracteres.',
     	];

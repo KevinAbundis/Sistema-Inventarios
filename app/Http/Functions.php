@@ -41,6 +41,25 @@ function getUserStatusArray($mode, $id){
 	endif;
 }
 
+// function getKindOfEquipmentArray($mode, $id){
+// 	$equipments = [
+// 		'CPU' => 'CPU',
+// 		'Monitor' => 'Monitor',
+// 		'Teclado' => 'Teclado',
+// 		'Raton' => 'Raton',
+// 		'Impresora' => 'Impresora',
+// 		'Telefono' => 'Telefono',
+// 		'Switch' => 'Switch',
+// 		'Modem' => 'Modem',
+// 		'Laptop' => 'Laptop',
+// 		'Otro_Equipo' => 'Otro_Equipo',
+// 	];
+// 	if(!is_null($mode)):
+// 		return $equipments;
+// 	else:
+// 		return $equipments[$id];
+// 	endif;
+// }
 
 function user_permissions(){
 	$p = [

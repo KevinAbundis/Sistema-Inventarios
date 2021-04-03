@@ -28,12 +28,14 @@ class EquipmentsController extends Controller
     }
 
     public function getEquipmentAdd(){
-    	return view('admin.equipments.equipment_add');
+    	$equipments = Equipment::all();
+    	$data = ['equipments' => $equipments];
+    	return view('admin.equipments.equipment_add', $data);
     }
 
     public function postEquipmentAdd(Request $request){
     	$rules = [
-    		'Serie_Equipo' => 'required',
+    		'Serie_Equipo' => 'required|unique:equipos',
     		'Id_Sucursal' => 'required',
     		'Id_Departamento' => 'required',
     		'Id_Ubicacion' => 'required',
@@ -41,6 +43,7 @@ class EquipmentsController extends Controller
 
     	$messages = [
     		'Serie_Equipo.required' => 'Número de Serie es requerido.',
+    		'Serie_Equipo.unique' => 'Ya existe un equipo registrado con este número de serie.',
     		'Id_Sucursal.required' => 'Sucursal es requerido.',
     		'Id_Departamento.required' => 'Departamento es requerido.',
     		'Id_Ubicacion.required' => 'Ubicación es requerida.',

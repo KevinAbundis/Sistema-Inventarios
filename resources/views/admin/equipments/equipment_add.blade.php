@@ -1,10 +1,10 @@
 @extends('admin.master')
 
-@section('title','User Add')
+@section('title','Equipment Add')
 
 @section('breadcrumb')
 <li class="breadcrumb-item">
-	<a href="{{ url('/admin/equipments/all') }}"><i class="fas fa-user-friends"></i>	Equipos de Cómputo</a>
+	<a href="{{ url('/admin/equipments/all') }}"><i class="fas fa-boxes"></i>	Equipos de Cómputo</a>
 </li>
 <li class="breadcrumb-item">
 	<a href="{{ url('/admin/equipment/add') }}"><i class="fas fa-plus-circle"></i>	Agregar Equipo</a>
@@ -71,6 +71,7 @@
 							<i class="fas fa-keyboard"></i>
 						</span>
 						{!!Form::text('Tipo_Hardware', null, ['class' => 'form-control', 'required'])!!}
+						{{-- {!!Form::select('Tipo_Hardware', getKindOfEquipmentArray('list', null), 0, ['class' => 'form-select'])!!} --}}
 					</div>
 				</div>
 

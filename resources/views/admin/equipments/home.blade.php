@@ -10,7 +10,7 @@
 
 @section('breadcrumb')
 <li class="breadcrumb-item">
-	<a href="{{ url('/admin/equipments/all') }}"><i class="fas fa-user-friends"></i>	Equipos de Cómputo</a>
+	<a href="{{ url('/admin/equipments/all') }}"><i class="fas fa-boxes"></i>	Equipos de Cómputo</a>
 </li>
 @endsection
 
@@ -46,6 +46,7 @@
 						<li><a href="{{ url('/admin/equipments/Telefono') }}"><i class="fas fa-phone-alt"></i> Telefonos</a></li>
 						<li><a href="{{ url('/admin/equipments/Switch') }}"><i class="fas fa-hdd"></i> Switches</a></li>
 						<li><a href="{{ url('/admin/equipments/Modem') }}"><i class="fas fa-wifi"></i> Modems</a></li>
+						<li><a href="{{ url('/admin/equipments/Laptop') }}"><i class="fas fa-laptop"></i> Laptops</a></li>
 						<li><a href="{{ url('/admin/equipments/Otros') }}"><i class="fas fa-server"></i> Otros Equipos</a></li>
 					</ul>
 				</li>
