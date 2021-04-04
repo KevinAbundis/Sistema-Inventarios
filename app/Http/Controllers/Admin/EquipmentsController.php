@@ -21,7 +21,7 @@ class EquipmentsController extends Controller
     	if($filter == 'all'):
            $equipments = Equipment::all();
         else:
-            $equipments = Equipment::where('Tipo_Hardware', $filter)->get();
+            $equipments = Equipment::where('Sucursal', $filter)->get();
         endif;
     	$data = ['equipments' => $equipments];
     	return view('admin.equipments.home', $data);

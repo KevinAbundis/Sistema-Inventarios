@@ -38,7 +38,14 @@
 					<a href="#"> Filtrar <i class="fas fa-angle-down"></i></a>
 					<ul class="shadow">
 						<li><a href="{{ url('/admin/equipments/all') }}"><i class="fas fa-stream"></i> Todos</a></li>
-						<li><a href="{{ url('/admin/equipments/CPU') }}"><i class="fas fa-tablet"></i> CPU's</a></li>
+						<li><a href="{{ url('/admin/equipments/Matriz') }}"><i class="fas fa-building"></i> Matriz</a></li>
+						<li><a href="{{ url('/admin/equipments/Chilpancingo') }}"><i class="fas fa-building"></i> Chilpancingo</a></li>
+						<li><a href="{{ url('/admin/equipments/Zihuatanejo') }}"><i class="fas fa-building"></i> Zihuatanejo</a></li>
+						<li><a href="{{ url('/admin/equipments/Diamante') }}"><i class="fas fa-building"></i> Diamante</a></li>
+						<li><a href="{{ url('/admin/equipments/Farallon') }}"><i class="fas fa-building"></i> Farallon</a></li>
+						<li><a href="{{ url('/admin/equipments/BuickGMC_Acapulco') }}"><i class="fas fa-building"></i> BuickGMC_Acapulco</a></li>
+						<li><a href="{{ url('/admin/equipments/BuickGMC_Chilpancingo') }}"><i class="fas fa-building"></i> BuickGMC_Chilpancingo</a></li>
+						{{-- <li><a href="{{ url('/admin/equipments/CPU') }}"><i class="fas fa-tablet"></i> CPU's</a></li>
 						<li><a href="{{ url('/admin/equipments/Monitor') }}"><i class="fas fa-desktop"></i> Monitores</a></li>
 						<li><a href="{{ url('/admin/equipments/Teclado') }}"><i class="fas fa-keyboard"></i> Teclados</a></li>
 						<li><a href="{{ url('/admin/equipments/Raton') }}"><i class="fas fa-mouse"></i> Ratones</a></li>
@@ -47,7 +54,7 @@
 						<li><a href="{{ url('/admin/equipments/Switch') }}"><i class="fas fa-hdd"></i> Switches</a></li>
 						<li><a href="{{ url('/admin/equipments/Modem') }}"><i class="fas fa-wifi"></i> Modems</a></li>
 						<li><a href="{{ url('/admin/equipments/Laptop') }}"><i class="fas fa-laptop"></i> Laptops</a></li>
-						<li><a href="{{ url('/admin/equipments/Otros') }}"><i class="fas fa-server"></i> Otros Equipos</a></li>
+						<li><a href="{{ url('/admin/equipments/Otros') }}"><i class="fas fa-server"></i> Otros Equipos</a></li> --}}
 					</ul>
 				</li>
 			</ul>
