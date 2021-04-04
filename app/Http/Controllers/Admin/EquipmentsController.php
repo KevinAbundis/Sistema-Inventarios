@@ -28,9 +28,7 @@ class EquipmentsController extends Controller
     }
 
     public function getEquipmentAdd(){
-    	$equipments = Equipment::all();
-    	$data = ['equipments' => $equipments];
-    	return view('admin.equipments.equipment_add', $data);
+    	return view('admin.equipments.equipment_add');
     }
 
     public function postEquipmentAdd(Request $request){
@@ -59,6 +57,34 @@ class EquipmentsController extends Controller
 
     		if($equipment->save()):
     			return redirect('/admin/equipments/all')->with('message','Equipo agregado con éxito.')->with('typealert','success');
+    		endif;
+    	endif;
+    }
+
+    public function getEquipmentEdit($id){
+    	$equipment = Equipment::findOrFail($id);
+    	$data = ['equipment' => $equipment];
+    	return view('admin.equipments.equipment_edit', $data);
+    }
+
+    public function postEquipmentEdit(Request $request, $id){
+
+    	$validator = Validator::make($request->all(), [], []);
+    	if($validator->fails()):
+    		return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger');
+    	else:
+    		$equipment = Equipment::findOrFail($id);
+    		$equipment->Serie_Equipo = e($request->input('Serie_Equipo'));
+    		$equipment->Sucursal = e($request->input('Sucursal'));
+    		$equipment->Departamento = e($request->input('Departamento'));
+    		$equipment->Ubicacion = e($request->input('Ubicacion'));
+    		$equipment->Tipo_Hardware = e($request->input('Tipo_Hardware'));
+    		$equipment->Marca = e($request->input('Marca'));
+    		$equipment->Modelo = e($request->input('Modelo'));
+    		$equipment->Descripcion = e($request->input('Descripcion'));
+
+    		if($equipment->save()):
+    			return redirect('/admin/equipments/all')->with('message','Datos del equipo actualizados con éxito.')->with('typealert','success');
     		endif;
     	endif;
     }

@@ -14,7 +14,7 @@ class CreateSalidasEquiposTable extends Migration
     public function up()
     {
         Schema::create('salidas_equipos', function (Blueprint $table) {
-            $table->bigIncrements('Id_Salida');
+            $table->bigIncrements('id');
             $table->string('Nombre_Usuario');
             $table->string('Descripcion');
             $table->string('Marca')->nullable();

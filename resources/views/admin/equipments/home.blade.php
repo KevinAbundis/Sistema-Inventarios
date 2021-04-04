@@ -20,13 +20,13 @@
 		<div class="header">
 			<h2 class="title"><i class="fas fa-boxes"></i>	Equipos de Cómputo</h2>
 			<ul>
-				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
+				@if(kvfj(Auth::user()->permissions, 'equipment_add'))
 				<li>
 					<a href="{{ url('/admin/equipment/add') }}">
 						<i class="fas fa-plus-circle"></i>  Agregar Equipo
 					</a>
 				</li>
-				{{-- @endif --}}
+				@endif
 				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
 				<li>
 					<a href="{{ url('/admin/equipment/output') }}">
@@ -89,20 +89,25 @@
 								<td>{{ $equipment->Modelo }}</td>
 								<td>{{ $equipment->Descripcion }}</td>
 								<td>
-									Falta poner las acciones
-									{{-- <div class="opts">
-										@if(kvfj(Auth::user()->permissions, 'user_edit'))
-										<a href="{{ url('/admin/user/'.$equipment->Serie_Equipo.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar">
+									<div class="opts">
+										@if(kvfj(Auth::user()->permissions, 'equipment_edit'))
+										<a href="{{ url('/admin/equipment/'.$equipment->id.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar">
 											<i class="fas fa-edit"></i>
 										</a>
 										@endif
 
-										@if(kvfj(Auth::user()->permissions, 'user_permissions'))
-										<a href="{{ url('/admin/user/'.$equipment->Serie_Equipo.'/permissions') }}" data-toggle="tooltip" data-placement="top" title="Permisos de Usuario">
-											<i class="fas fa-user-cog"></i>
-										</a>
-										@endif
-									</div> --}}
+										{{-- @if(kvfj(Auth::user()->permissions, 'product_delete')) --}}
+											{{-- @if(is_null($equipment->deleted_at))
+												<a href="#" data-path="admin/equipment" data-action="delete" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn-deleted">
+													<i class="fas fa-trash-alt"></i>
+												</a>
+											@else
+												<a href="{{ url('/admin/equipment/'.$equipment->id.'/restore') }}" data-path="admin/equipment" data-action="restore" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Restaurar" class="btn-deleted">
+													<i class="fas fa-trash-restore"></i>
+												</a>
+											@endif --}}
+										{{-- @endif --}}
+									</div>
 								</td>
 							</tr>
 							@endforeach

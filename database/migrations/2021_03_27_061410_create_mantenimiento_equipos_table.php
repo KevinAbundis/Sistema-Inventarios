@@ -14,7 +14,7 @@ class CreateMantenimientoEquiposTable extends Migration
     public function up()
     {
         Schema::create('mantenimiento_equipos', function (Blueprint $table) {
-            $table->bigIncrements('Id_Mantenimiento');
+            $table->bigIncrements('id');
             $table->string('Descripcion');
             $table->string('Serie_Equipo');
             $table->string('Marca')->nullable();

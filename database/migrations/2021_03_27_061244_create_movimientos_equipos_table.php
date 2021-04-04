@@ -14,7 +14,7 @@ class CreateMovimientosEquiposTable extends Migration
     public function up()
     {
         Schema::create('movimientos_equipos', function (Blueprint $table) {
-            $table->bigIncrements('Id_Movimiento');
+            $table->bigIncrements('id');
             $table->string('Nombre_Usuario');
             $table->string('Serie_Equipo');
             $table->string('Operacion_Realizada');

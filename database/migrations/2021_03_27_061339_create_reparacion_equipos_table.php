@@ -14,7 +14,7 @@ class CreateReparacionEquiposTable extends Migration
     public function up()
     {
         Schema::create('reparacion_equipos', function (Blueprint $table) {
-            $table->bigIncrements('Id_Reparacion');
+            $table->bigIncrements('id');
             $table->string('Descripcion');
             $table->string('Serie_Equipo');
             $table->string('Service_Tag')->nullable();

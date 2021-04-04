@@ -14,8 +14,8 @@ class CreateCaracteristicasCpuTable extends Migration
     public function up()
     {
         Schema::create('caracteristicas_cpu', function (Blueprint $table) {
-            $table->bigIncrements('Id_CPU');
-            $table->string('Serie_Equipo');
+            $table->bigIncrements('id');
+            $table->string('Serie_Equipo')->unique();
             $table->string('Procesador')->nullable();
             $table->string('Velocidad_Procesador')->nullable();
             $table->string('Memoria_RAM')->nullable();
