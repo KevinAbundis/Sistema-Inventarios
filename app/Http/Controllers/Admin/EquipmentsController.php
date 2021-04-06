@@ -18,11 +18,18 @@ class EquipmentsController extends Controller
     }
 
     public function getEquipmentHome($filter){
-    	if($filter == 'all'):
-           $equipments = Equipment::all();
-        else:
-            $equipments = Equipment::where('Sucursal', $filter)->get();
-        endif;
+    	switch ($filter) {
+            case 'all':
+                $equipments = Equipment::all();
+                break;
+            case 'trash':
+                  $equipments = Equipment::onlyTrashed()->get();
+                break;
+            default:
+                  $equipments = Equipment::where('Sucursal', $filter)->get();
+                break;
+        }
+
     	$data = ['equipments' => $equipments];
     	return view('admin.equipments.home', $data);
     }
@@ -87,6 +94,24 @@ class EquipmentsController extends Controller
     			return redirect('/admin/equipments/all')->with('message','Datos del equipo actualizados con éxito.')->with('typealert','success');
     		endif;
     	endif;
+    }
+
+
+    public function getEquipmentDelete($id){
+    	$equipment = Equipment::findOrFail($id);
+
+    	if($equipment->delete()):
+    		return back()->with('message','Equipo enviado a la papelera de reciclaje con éxito.')->with('typealert','success');
+    	endif;
+    }
+
+    public function getEquipmentRestore($id){
+    	$equipment = Equipment::onlyTrashed()->where('id', $id)->first();
+
+    	if($equipment->restore()):
+    		return redirect('/admin/equipment/'.$equipment->id.'/edit')->with('message','Equipo se restauró con éxito.')->with('typealert','success');
+    	endif;
+
     }
 
 

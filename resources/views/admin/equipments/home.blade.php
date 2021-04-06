@@ -45,6 +45,7 @@
 						<li><a href="{{ url('/admin/equipments/Farallon') }}"><i class="fas fa-building"></i> Farallon</a></li>
 						<li><a href="{{ url('/admin/equipments/BuickGMC_Acapulco') }}"><i class="fas fa-building"></i> BuickGMC_Acapulco</a></li>
 						<li><a href="{{ url('/admin/equipments/BuickGMC_Chilpancingo') }}"><i class="fas fa-building"></i> BuickGMC_Chilpancingo</a></li>
+						<li><a href="{{ url('/admin/equipments/trash') }}"><i class="fas fa-trash"></i> Papelera</a></li>
 						{{-- <li><a href="{{ url('/admin/equipments/CPU') }}"><i class="fas fa-tablet"></i> CPU's</a></li>
 						<li><a href="{{ url('/admin/equipments/Monitor') }}"><i class="fas fa-desktop"></i> Monitores</a></li>
 						<li><a href="{{ url('/admin/equipments/Teclado') }}"><i class="fas fa-keyboard"></i> Teclados</a></li>
@@ -96,17 +97,17 @@
 										</a>
 										@endif
 
-										{{-- @if(kvfj(Auth::user()->permissions, 'product_delete')) --}}
-											{{-- @if(is_null($equipment->deleted_at))
-												<a href="#" data-path="admin/equipment" data-action="delete" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn-deleted">
+										@if(kvfj(Auth::user()->permissions, 'equipment_delete'))
+											@if(is_null($equipment->deleted_at))
+												<a href="{{ url('/admin/equipment/'.$equipment->id.'/delete') }}" data-path="admin/equipment" data-action="delete" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn-deleted">
 													<i class="fas fa-trash-alt"></i>
 												</a>
 											@else
 												<a href="{{ url('/admin/equipment/'.$equipment->id.'/restore') }}" data-path="admin/equipment" data-action="restore" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Restaurar" class="btn-deleted">
 													<i class="fas fa-trash-restore"></i>
 												</a>
-											@endif --}}
-										{{-- @endif --}}
+											@endif
+										@endif
 									</div>
 								</td>
 							</tr>

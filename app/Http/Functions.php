@@ -72,6 +72,7 @@ function user_permissions(){
 				'equipment_list' => 'Puede ver el listado de los equipos de cómputo.',
 				'equipment_add' => 'Puede agregar equipos de cómputo al sistema.',
 				'equipment_edit' => 'Puede editar los equipos de cómputo del sistema.',
+				'equipment_delete' => 'Puede eliminar los equipos de cómputo del sistema.',
 			]
 		],
 

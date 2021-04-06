@@ -71,7 +71,7 @@ function delete_object(e){
 
 	if(action == "delete"){
 		title = "¿Estás seguro de eliminar este objeto?";
-		text = "Recuerda que esta acción enviará este elemento a la papelera o lo eliminará de forma definitiva. ";
+		text = "Está acción enviará este elemento a la papelera. ";
 		icon = "warning";
 	}
 
