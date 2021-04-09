@@ -6,7 +6,7 @@
 <div class="box box_login shadow">
 		<div class="header">
 			<a href="{{ url('/') }}">
-				<img src="{{ url('/static/images/chevrolet.jpg') }}">
+				<img src="{{ url('/static/images/FirmaChevrolet.png') }}">
 			</a>
 		</div>
 		<div class="inside">

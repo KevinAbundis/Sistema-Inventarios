@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('title','Equipment Add')
+@section('title','Equipment Edit')
 
 @section('breadcrumb')
 <li class="breadcrumb-item">

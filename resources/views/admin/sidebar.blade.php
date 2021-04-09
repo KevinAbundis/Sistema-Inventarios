@@ -1,8 +1,11 @@
 <div class="sidebar shadow">
 	<div class="section-top">
 		<div class="logo">
-			<img src="{{ url('static/images/chevrolet.png') }}" class="img-fluid">
-			<h6>CHEVROLET</h6>
+			{{-- <img src="{{ url('static/images/chevrolet.png') }}" class="img-fluid">
+			<h6>CHEVROLET</h6> --}}
+			<img src="{{ url('static/images/FirmaChevroletLogos.png') }}" class="img-fluid">
+			<h6>NOM_PROYEC</h6>
+
 		</div>
 		{{-- <div class="user mtop16">
 			<span class="subtitle">Bienvenido:</span>

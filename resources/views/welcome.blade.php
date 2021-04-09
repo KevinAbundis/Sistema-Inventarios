@@ -19,7 +19,8 @@
 <body>
 
     <nav class="navbar navbar-expand-lg shadow">
-        <img class="img1" src="{{ url('/static/images/chevrolet.png') }}">
+        {{-- <img class="img1" src="{{ url('/static/images/Chevrolet.png') }}"> --}}
+        <img class="img1" src="{{ url('/static/images/FirmaChevroletLogos.png') }}">
         <h2>SISTEMA DE INVENTARIOS</h2>
         <a class="navbar-brand" href="{{ url('/login') }}">INICIAR SESIÓN</a>
     </nav>
