@@ -3,8 +3,10 @@
 		<div class="logo">
 			{{-- <img src="{{ url('static/images/chevrolet.png') }}" class="img-fluid">
 			<h6>CHEVROLET</h6> --}}
-			<img src="{{ url('static/images/FirmaChevroletLogos.png') }}" class="img-fluid">
-			<h6>NOM_PROYEC</h6>
+			<img src="{{ url('static/images/chevrolet-trans.png') }}" class="img-fluid img1">
+			<img src="{{ url('static/images/buick-trans.png') }}" class="img-fluid img2">
+			<img src="{{ url('static/images/gmc-trans.png') }}" class="img-fluid img3">
+			{{-- <h6>NOM_PROYEC</h6> --}}
 
 		</div>
 		{{-- <div class="user mtop16">

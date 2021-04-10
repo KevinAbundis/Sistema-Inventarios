@@ -38,7 +38,6 @@
 				<div class="container">
 					<div class="collapse navbar-collapse" id="navigationMain">
 						<ul class="navbar-nav ml-auto">
-
 							<li class="nav-item dropdown link-acc link-user">
 								<a href="#" class="nav-link btn dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
 									@if(is_null(Auth::user()->avatar))

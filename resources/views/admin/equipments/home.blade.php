@@ -71,10 +71,10 @@
 								<td>Sucursal</td>
 								<td>Departamento</td>
 								<td>Ubicación</td>
-								<td>Tipo de Hardware</td>
-								<td>Marca</td>
-								<td>Modelo</td>
-								<td>Descripción</td>
+								<td>Tipo de Equipo</td>
+								{{-- <td>Marca</td> --}}
+								{{-- <td>Modelo</td> --}}
+								{{-- <td>Descripción</td> --}}
 								<td>Acciones</td>
 							</tr>
 						</thead>
@@ -86,16 +86,37 @@
 								<td>{{ $equipment->Departamento }}</td>
 								<td>{{ $equipment->Ubicacion }}</td>
 								<td>{{ $equipment->Tipo_Hardware }}</td>
-								<td>{{ $equipment->Marca }}</td>
-								<td>{{ $equipment->Modelo }}</td>
-								<td>{{ $equipment->Descripcion }}</td>
+								{{-- <td>{{ $equipment->Marca }}</td> --}}
+								{{-- <td>{{ $equipment->Modelo }}</td> --}}
+								{{-- <td>{{ $equipment->Descripcion }}</td> --}}
 								<td>
 									<div class="opts">
 										@if(kvfj(Auth::user()->permissions, 'equipment_edit'))
+										@if(is_null($equipment->deleted_at))
 										<a href="{{ url('/admin/equipment/'.$equipment->id.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar">
 											<i class="fas fa-edit"></i>
 										</a>
 										@endif
+										@endif
+
+										<a href="#" data-path="admin/equipment" data-action="info" data = "
+										<hr>
+										<strong>Marca: </strong> {{ $equipment->Marca }}
+										<hr>
+										<strong>Modelo: </strong>{{ $equipment->Modelo }}
+										<hr>
+										<strong>Descripción: </strong>{{ $equipment->Descripcion }}
+										<hr>
+										"
+										data-toggle="tooltip"
+										data-placement="top"
+										title="Ver más información"
+										class="btn-deleted">
+											<i class="fas fa-info-circle"></i>
+										</a>
+
+										{{-- data-object="Marca: {{ $equipment->Marca }}  Descripción: {{ $equipment->Descripcion }}"  --}}
+
 
 										@if(kvfj(Auth::user()->permissions, 'equipment_delete'))
 											@if(is_null($equipment->deleted_at))

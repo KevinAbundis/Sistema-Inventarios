@@ -70,28 +70,53 @@ function delete_object(e){
 	var title, text, icon;
 
 	if(action == "delete"){
-		title = "¿Estás seguro de eliminar este objeto?";
-		text = "Está acción enviará este elemento a la papelera. ";
+		title = "¿Estás seguro de eliminar?";
+		text = "Dicha acción enviará el equipo a la papelera ";
 		icon = "warning";
+		Swal.fire({
+			title: title,
+			text: text,
+			icon: icon,
+			showCancelButton: true,
+			confirmButtonText: 'Confirmar',
+			cancelButtonText: 'Cancelar',
+		}).then((result) => {
+			if (result.value) {
+				window.location.href = url;
+			}
+		});
 	}
 
 	if(action == "restore"){
-		title = "¿Quieres restaurar este elemento?";
-		text = "Está acción restaurará este elemento y estará activo en la base de datos. ";
+		title = "¿Estás seguro de restaurar?";
+		text = "Dicha acción restaurará el equipo en el sistema ";
 		icon = "info";
+		Swal.fire({
+			title: title,
+			text: text,
+			icon: icon,
+			showCancelButton: true,
+			confirmButtonText: 'Confirmar',
+			cancelButtonText: 'Cancelar',
+		}).then((result) => {
+			if (result.value) {
+				window.location.href = url;
+			}
+		});
+	}
+
+	if(action == "info"){
+		title = "Información del Equipo";
+		text = this.getAttribute('data');
+		icon = "info";
+		Swal.fire({
+			title: title,
+			html: text,
+			icon: icon,
+			confirmButtonText: 'OK',
+		});
 	}
 
 
-	Swal.fire({
-		title: title,
-		text: text,
-		icon: icon,
-		showCancelButton: true,
-		confirmButtonText: 'Confirmar',
-  		cancelButtonText: 'Cancelar',
-	}).then((result) => {
-	  if (result.value) {
-	  	window.location.href = url;
-	  }
-	});
+
 }
