@@ -117,6 +117,5 @@ function delete_object(e){
 		});
 	}
 
-
-
 }
+
