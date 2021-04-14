@@ -92,30 +92,87 @@
 								<td>
 									<div class="opts">
 										@if(kvfj(Auth::user()->permissions, 'equipment_edit'))
-										@if(is_null($equipment->deleted_at))
-										<a href="{{ url('/admin/equipment/'.$equipment->id.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar">
-											<i class="fas fa-edit"></i>
-										</a>
-										@endif
+											@if(is_null($equipment->deleted_at))
+												<a href="{{ url('/admin/equipment/'.$equipment->id.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar">
+													<i class="fas fa-edit"></i>
+												</a>
+											@endif
 										@endif
 
-										<a href="#" data-path="admin/equipment" data-action="info" data = "
-										<hr>
-										<strong>Marca: </strong> {{ $equipment->Marca }}
-										<hr>
-										<strong>Modelo: </strong>{{ $equipment->Modelo }}
-										<hr>
-										<strong>Descripción: </strong>{{ $equipment->Descripcion }}
-										<hr>
-										"
-										data-toggle="tooltip"
-										data-placement="top"
-										title="Ver más información"
-										class="btn-deleted">
-											<i class="fas fa-info-circle"></i>
-										</a>
-
+										{{-- @if( $equipment->Tipo_Hardware != "CPU")
+											<a href="#" data-path="admin/equipment" data-action="info" data = "
+											<hr>
+											<strong>Marca: </strong> {{ $equipment->Marca }}
+											<hr>
+											<strong>Modelo: </strong>{{ $equipment->Modelo }}
+											<hr>
+											<strong>Descripción: </strong>{{ $equipment->Descripcion }}
+											<hr>
+											"
+											data-toggle="tooltip"
+											data-placement="top"
+											title="Ver más información"
+											class="btn-deleted">
+												<i class="fas fa-info-circle"></i>
+											</a>
+										@endif --}}
 										{{-- data-object="Marca: {{ $equipment->Marca }}  Descripción: {{ $equipment->Descripcion }}"  --}}
+
+										@foreach($cpufeatures as $cpufeature)
+											{{-- @if( $equipment->Tipo_Hardware == "CPU") --}}
+											<a href="#" data-path="admin/equipment" data-action="info" data = "
+											<hr>
+											<strong>Marca: </strong> {{ $equipment->Marca }}
+											<hr>
+											<strong>Modelo: </strong>{{ $equipment->Modelo }}
+											<hr>
+											<strong>Descripción: </strong>{{ $equipment->Descripcion }}
+											<hr>
+											@if( $equipment->Serie_Equipo == $cpufeature->Serie_Equipo)
+											<strong>Procesador: </strong>{{ $cpufeature->Procesador }}
+											<hr>
+											<strong>Velocidad Procesador: </strong>{{ $cpufeature->Velocidad_Procesador }}
+											<hr>
+											<strong>Memoria RAM: </strong>{{ $cpufeature->Memoria_RAM }}
+											<hr>
+											<strong>Capacidad Disco Duro: </strong>{{ $cpufeature->Capacidad_DiscoDuro }}
+											<hr>
+											<strong>Sistema Operativo: </strong>{{ $cpufeature->Sistema_Operativo }}
+											<hr>
+											<strong>ESET32: </strong>{{ $cpufeature->ESET32 }}
+											<hr>
+											<strong>Office: </strong>{{ $cpufeature->Office }}
+											<hr>
+											<strong>Service Tag: </strong>{{ $cpufeature->Service_Tag }}
+											<hr>
+											<strong>Service Code: </strong>{{ $cpufeature->Service_Code }}
+											<hr>
+											<strong>IP: </strong>{{ $cpufeature->IP }}
+											<hr>
+											<strong>Usuario: </strong>{{ $cpufeature->Usuario }}
+											<hr>
+											<strong>Contraseña CPU: </strong>{{ $cpufeature->Contrasenia_CPU }}
+											<hr>
+											<strong>Remoto: </strong>{{ $cpufeature->Remoto }}
+											<hr>
+											<strong>Contraseña Remoto: </strong>{{ $cpufeature->Contrasenia_Remoto }}
+											<hr>
+											<strong>Serie Raton: </strong>{{ $cpufeature->Serie_Raton }}
+											<hr>
+											<strong>Serie Teclado: </strong>{{ $cpufeature->Serie_Teclado }}
+											<hr>
+											<strong>Serie Monitor: </strong>{{ $cpufeature->Serie_Monitor }}
+											<hr>
+											@endif
+											"
+											data-toggle="tooltip"
+											data-placement="top"
+											title="Ver más información"
+											class="btn-deleted">
+												<i class="fas fa-info-circle"></i>
+											</a>
+											{{-- @endif --}}
+										@endforeach
 
 
 										@if(kvfj(Auth::user()->permissions, 'equipment_delete'))

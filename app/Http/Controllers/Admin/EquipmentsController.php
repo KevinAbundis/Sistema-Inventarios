@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use Validator, Image, Hash, Auth, Mail, Str, Config;
 use App\Models\Equipment;
+use App\Models\CPUFeatures;
 
 class EquipmentsController extends Controller
 {
@@ -21,16 +22,19 @@ class EquipmentsController extends Controller
     	switch ($filter) {
             case 'all':
                 $equipments = Equipment::all();
+                $cpufeatures = CPUFeatures::all();
                 break;
             case 'trash':
                   $equipments = Equipment::onlyTrashed()->get();
+                  $cpufeatures = CPUFeatures::all();
                 break;
             default:
                   $equipments = Equipment::where('Sucursal', $filter)->get();
+                  $cpufeatures = CPUFeatures::all();
                 break;
         }
 
-    	$data = ['equipments' => $equipments];
+    	$data = ['equipments' => $equipments, 'cpufeatures' => $cpufeatures];
     	return view('admin.equipments.home', $data);
     }
 

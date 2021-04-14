@@ -106,7 +106,7 @@ function delete_object(e){
 	}
 
 	if(action == "info"){
-		title = "Información del Equipo";
+		title = "Información Equipo";
 		text = this.getAttribute('data');
 		icon = "info";
 		Swal.fire({
