@@ -51,71 +51,71 @@ document.addEventListener('DOMContentLoaded', function(){
 	document.getElementsByClassName('lk-'+route)[0].classList.add('active');
 
 	//Eliminar producto
-	btn_deleted = document.getElementsByClassName('btn-deleted');
-	for(i=0; i< btn_deleted.length; i++){
-		btn_deleted[i].addEventListener('click', delete_object);
-	}
+	// btn_deleted = document.getElementsByClassName('btn-deleted');
+	// for(i=0; i< btn_deleted.length; i++){
+	// 	btn_deleted[i].addEventListener('click', delete_object);
+	// }
 
 });
 
 
 //Función para eliminar producto
-function delete_object(e){
-	e.preventDefault();
-	var object = this.getAttribute('data-object');
-	var action =  this.getAttribute('data-action');
-	var path = this.getAttribute('data-path');
-	var url = base + '/' + path + '/' + object + '/' + action;
-	//console.log(object, action, path, url);
-	var title, text, icon;
+// function delete_object(e){
+// 	e.preventDefault();
+// 	var object = this.getAttribute('data-object');
+// 	var action =  this.getAttribute('data-action');
+// 	var path = this.getAttribute('data-path');
+// 	var url = base + '/' + path + '/' + object + '/' + action;
+// 	//console.log(object, action, path, url);
+// 	var title, text, icon;
 
-	if(action == "delete"){
-		title = "¿Estás seguro de eliminar?";
-		text = "Dicha acción enviará el equipo a la papelera ";
-		icon = "warning";
-		Swal.fire({
-			title: title,
-			text: text,
-			icon: icon,
-			showCancelButton: true,
-			confirmButtonText: 'Confirmar',
-			cancelButtonText: 'Cancelar',
-		}).then((result) => {
-			if (result.value) {
-				window.location.href = url;
-			}
-		});
-	}
+// 	if(action == "delete"){
+// 		title = "¿Estás seguro de eliminar?";
+// 		text = "Dicha acción enviará el equipo a la papelera ";
+// 		icon = "warning";
+// 		Swal.fire({
+// 			title: title,
+// 			text: text,
+// 			icon: icon,
+// 			showCancelButton: true,
+// 			confirmButtonText: 'Confirmar',
+// 			cancelButtonText: 'Cancelar',
+// 		}).then((result) => {
+// 			if (result.value) {
+// 				window.location.href = url;
+// 			}
+// 		});
+// 	}
 
-	if(action == "restore"){
-		title = "¿Estás seguro de restaurar?";
-		text = "Dicha acción restaurará el equipo en el sistema ";
-		icon = "info";
-		Swal.fire({
-			title: title,
-			text: text,
-			icon: icon,
-			showCancelButton: true,
-			confirmButtonText: 'Confirmar',
-			cancelButtonText: 'Cancelar',
-		}).then((result) => {
-			if (result.value) {
-				window.location.href = url;
-			}
-		});
-	}
+// 	if(action == "restore"){
+// 		title = "¿Estás seguro de restaurar?";
+// 		text = "Dicha acción restaurará el equipo en el sistema ";
+// 		icon = "info";
+// 		Swal.fire({
+// 			title: title,
+// 			text: text,
+// 			icon: icon,
+// 			showCancelButton: true,
+// 			confirmButtonText: 'Confirmar',
+// 			cancelButtonText: 'Cancelar',
+// 		}).then((result) => {
+// 			if (result.value) {
+// 				window.location.href = url;
+// 			}
+// 		});
+// 	}
 
-	if(action == "info"){
-		title = "Información Equipo";
-		text = this.getAttribute('data');
-		icon = "info";
-		Swal.fire({
-			title: title,
-			html: text,
-			icon: icon,
-			confirmButtonText: 'OK',
-		});
-	}
+// 	if(action == "info"){
+// 		title = "Información Equipo";
+// 		text = this.getAttribute('data');
+// 		icon = "info";
+// 		Swal.fire({
+// 			title: title,
+// 			html: text,
+// 			icon: icon,
+// 			confirmButtonText: 'OK',
+// 		});
+// 	}
 
-}
+// }
 

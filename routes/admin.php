@@ -21,12 +21,18 @@ Route::prefix('/admin')->group(function(){
 
 	//MÓDULO DE EQUIPOS DE CÓMPUTO
 	Route::get('/equipments/{filter}','Admin\EquipmentsController@getEquipmentHome')->name('equipment_list');
+	Route::get('/equipment/{id}/info', 'Admin\EquipmentsController@getEquipmentInfo')->name('equipment_list');
 	Route::get('/equipment/add', 'Admin\EquipmentsController@getEquipmentAdd')->name('equipment_add');
 	Route::post('/equipment/add', 'Admin\EquipmentsController@postEquipmentAdd')->name('equipment_add');
+	Route::get('/equipment/add/features', 'Admin\EquipmentsController@getEquipmentAddFeatures')->name('equipment_add');
+	Route::post('/equipment/add/features', 'Admin\EquipmentsController@postEquipmentAddFeatures')->name('equipment_add');
 	Route::get('/equipment/{id}/edit', 'Admin\EquipmentsController@getEquipmentEdit')->name('equipment_edit');
 	Route::post('/equipment/{id}/edit', 'Admin\EquipmentsController@postEquipmentEdit')->name('equipment_edit');
+	Route::get('/equipment/{id}/edit/features', 'Admin\EquipmentsController@getEquipmentEditFeatures')->name('equipment_edit');
+	Route::post('/equipment/{id}/edit/features', 'Admin\EquipmentsController@postEquipmentEditFeatures')->name('equipment_edit');
 	Route::get('/equipment/{id}/delete', 'Admin\EquipmentsController@getEquipmentDelete')->name('equipment_delete');
 	Route::get('/equipment/{id}/restore', 'Admin\EquipmentsController@getEquipmentRestore')->name('equipment_delete');
+
 
 
 

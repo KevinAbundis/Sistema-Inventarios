@@ -72,6 +72,50 @@ class EquipmentsController extends Controller
     	endif;
     }
 
+    public function getEquipmentAddFeatures(){
+        return view('admin.equipments.equipment_add_features');
+    }
+
+    public function postEquipmentAddFeatures(Request $request){
+        $rules = [
+            'Serie_Equipo' => 'required|unique:caracteristicas_cpu',
+        ];
+
+        $messages = [
+            'Serie_Equipo.required' => 'Número de Serie es requerido.',
+            'Serie_Equipo.unique' => 'Ya existe un equipo registrado con este número de serie.',
+        ];
+
+        $validator = Validator::make($request->all(), $rules, $messages);
+        if($validator->fails()):
+            return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger');
+        else:
+            $cpufeature = new CPUFeatures;
+            $cpufeature->Serie_Equipo = e($request->input('Serie_Equipo'));
+            $cpufeature->Procesador = e($request->input('Procesador'));
+            $cpufeature->Velocidad_Procesador = e($request->input('Velocidad_Procesador'));
+            $cpufeature->Memoria_RAM = e($request->input('Memoria_RAM'));
+            $cpufeature->Capacidad_DiscoDuro = e($request->input('Capacidad_DiscoDuro'));
+            $cpufeature->Sistema_Operativo = e($request->input('Sistema_Operativo'));
+            $cpufeature->ESET32 = e($request->input('ESET32'));
+            $cpufeature->Office = e($request->input('Office'));
+            $cpufeature->Service_Tag = e($request->input('Service_Tag'));
+            $cpufeature->Service_Code = e($request->input('Service_Code'));
+            $cpufeature->IP = e($request->input('IP'));
+            $cpufeature->Usuario = e($request->input('Usuario'));
+            $cpufeature->Contrasenia_CPU = e($request->input('Contrasenia_CPU'));
+            $cpufeature->Remoto = e($request->input('Remoto'));
+            $cpufeature->Contrasenia_Remoto = e($request->input('Contrasenia_Remoto'));
+            $cpufeature->Serie_Raton = e($request->input('Serie_Raton'));
+            $cpufeature->Serie_Teclado = e($request->input('Serie_Teclado'));
+            $cpufeature->Serie_Monitor = e($request->input('Serie_Monitor'));
+
+            if($cpufeature->save()):
+                return redirect('/admin/equipments/all')->with('message','Características del Equipo agregadas con éxito.')->with('typealert','success');
+            endif;
+        endif;
+    }
+
     public function getEquipmentEdit($id){
     	$equipment = Equipment::findOrFail($id);
     	$data = ['equipment' => $equipment];
@@ -100,6 +144,44 @@ class EquipmentsController extends Controller
     	endif;
     }
 
+    public function getEquipmentEditFeatures($id){
+        $cpufeature = CPUFeatures::findOrFail($id);
+        $data = ['cpufeature' => $cpufeature];
+        return view('admin.equipments.equipment_edit_features', $data);
+    }
+
+    public function postEquipmentEditFeatures(Request $request, $id){
+
+        $validator = Validator::make($request->all(), [], []);
+        if($validator->fails()):
+            return back()->withErrors($validator)->with('message','Se ha producido un error.')->with('typealert','danger');
+        else:
+            $cpufeature = CPUFeatures::findOrFail($id);
+            $cpufeature->Serie_Equipo = e($request->input('Serie_Equipo'));
+            $cpufeature->Procesador = e($request->input('Procesador'));
+            $cpufeature->Velocidad_Procesador = e($request->input('Velocidad_Procesador'));
+            $cpufeature->Memoria_RAM = e($request->input('Memoria_RAM'));
+            $cpufeature->Capacidad_DiscoDuro = e($request->input('Capacidad_DiscoDuro'));
+            $cpufeature->Sistema_Operativo = e($request->input('Sistema_Operativo'));
+            $cpufeature->ESET32 = e($request->input('ESET32'));
+            $cpufeature->Office = e($request->input('Office'));
+            $cpufeature->Service_Tag = e($request->input('Service_Tag'));
+            $cpufeature->Service_Code = e($request->input('Service_Code'));
+            $cpufeature->IP = e($request->input('IP'));
+            $cpufeature->Usuario = e($request->input('Usuario'));
+            $cpufeature->Contrasenia_CPU = e($request->input('Contrasenia_CPU'));
+            $cpufeature->Remoto = e($request->input('Remoto'));
+            $cpufeature->Contrasenia_Remoto = e($request->input('Contrasenia_Remoto'));
+            $cpufeature->Serie_Raton = e($request->input('Serie_Raton'));
+            $cpufeature->Serie_Teclado = e($request->input('Serie_Teclado'));
+            $cpufeature->Serie_Monitor = e($request->input('Serie_Monitor'));
+
+            if($cpufeature->save()):
+                return redirect('/admin/equipments/all')->with('message','Características del equipo actualizados con éxito.')->with('typealert','success');
+            endif;
+        endif;
+    }
+
 
     public function getEquipmentDelete($id){
     	$equipment = Equipment::findOrFail($id);
@@ -116,6 +198,13 @@ class EquipmentsController extends Controller
     		return redirect('/admin/equipment/'.$equipment->id.'/edit')->with('message','Equipo se restauró con éxito.')->with('typealert','success');
     	endif;
 
+    }
+
+    public function getEquipmentInfo($id){
+        $equipment = Equipment::findOrFail($id);
+        $cpufeatures = CPUFeatures::all();
+        $data = ['equipment' => $equipment, 'cpufeatures' => $cpufeatures];
+        return view('admin.equipments.equipment_info', $data);
     }
 
 

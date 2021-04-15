@@ -27,6 +27,13 @@
 					</a>
 				</li>
 				@endif
+				@if(kvfj(Auth::user()->permissions, 'equipment_add'))
+				<li>
+					<a href="{{ url('/admin/equipment/add/features') }}">
+						<i class="fas fa-plus-circle"></i>  Agregar Características de Equipo
+					</a>
+				</li>
+				@endif
 				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
 				<li>
 					<a href="{{ url('/admin/equipment/output') }}">
@@ -67,33 +74,35 @@
 					<table class="table table-striped" id="usuarios">
 						<thead>
 							<tr>
+								<td>ID</td>
 								<td>Serie</td>
 								<td>Sucursal</td>
 								<td>Departamento</td>
 								<td>Ubicación</td>
 								<td>Tipo de Equipo</td>
-								{{-- <td>Marca</td> --}}
-								{{-- <td>Modelo</td> --}}
-								{{-- <td>Descripción</td> --}}
+								<td>Marca</td>
+								<td>Modelo</td>
+								<td>Descripción</td>
 								<td>Acciones</td>
 							</tr>
 						</thead>
 						<tbody>
 							@foreach($equipments as $equipment)
 							<tr>
+								<td>{{ $equipment->id }}</td>
 								<td>{{ $equipment->Serie_Equipo }}</td>
 								<td>{{ $equipment->Sucursal }}</td>
 								<td>{{ $equipment->Departamento }}</td>
 								<td>{{ $equipment->Ubicacion }}</td>
 								<td>{{ $equipment->Tipo_Hardware }}</td>
-								{{-- <td>{{ $equipment->Marca }}</td> --}}
-								{{-- <td>{{ $equipment->Modelo }}</td> --}}
-								{{-- <td>{{ $equipment->Descripcion }}</td> --}}
+								<td>{{ $equipment->Marca }}</td>
+								<td>{{ $equipment->Modelo }}</td>
+								<td>{{ $equipment->Descripcion }}</td>
 								<td>
 									<div class="opts">
 										@if(kvfj(Auth::user()->permissions, 'equipment_edit'))
 											@if(is_null($equipment->deleted_at))
-												<a href="{{ url('/admin/equipment/'.$equipment->id.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar">
+												<a href="{{ url('/admin/equipment/'.$equipment->id.'/edit') }}" data-toggle="tooltip" data-placement="top" title="Editar" style="margin-top: 5px; margin-bottom: 5px;">
 													<i class="fas fa-edit"></i>
 												</a>
 											@endif
@@ -118,70 +127,36 @@
 										@endif --}}
 										{{-- data-object="Marca: {{ $equipment->Marca }}  Descripción: {{ $equipment->Descripcion }}"  --}}
 
-										@foreach($cpufeatures as $cpufeature)
+
 											{{-- @if( $equipment->Tipo_Hardware == "CPU") --}}
-											<a href="#" data-path="admin/equipment" data-action="info" data = "
-											<hr>
-											<strong>Marca: </strong> {{ $equipment->Marca }}
-											<hr>
-											<strong>Modelo: </strong>{{ $equipment->Modelo }}
-											<hr>
-											<strong>Descripción: </strong>{{ $equipment->Descripcion }}
-											<hr>
-											@if( $equipment->Serie_Equipo == $cpufeature->Serie_Equipo)
-											<strong>Procesador: </strong>{{ $cpufeature->Procesador }}
-											<hr>
-											<strong>Velocidad Procesador: </strong>{{ $cpufeature->Velocidad_Procesador }}
-											<hr>
-											<strong>Memoria RAM: </strong>{{ $cpufeature->Memoria_RAM }}
-											<hr>
-											<strong>Capacidad Disco Duro: </strong>{{ $cpufeature->Capacidad_DiscoDuro }}
-											<hr>
-											<strong>Sistema Operativo: </strong>{{ $cpufeature->Sistema_Operativo }}
-											<hr>
-											<strong>ESET32: </strong>{{ $cpufeature->ESET32 }}
-											<hr>
-											<strong>Office: </strong>{{ $cpufeature->Office }}
-											<hr>
-											<strong>Service Tag: </strong>{{ $cpufeature->Service_Tag }}
-											<hr>
-											<strong>Service Code: </strong>{{ $cpufeature->Service_Code }}
-											<hr>
-											<strong>IP: </strong>{{ $cpufeature->IP }}
-											<hr>
-											<strong>Usuario: </strong>{{ $cpufeature->Usuario }}
-											<hr>
-											<strong>Contraseña CPU: </strong>{{ $cpufeature->Contrasenia_CPU }}
-											<hr>
-											<strong>Remoto: </strong>{{ $cpufeature->Remoto }}
-											<hr>
-											<strong>Contraseña Remoto: </strong>{{ $cpufeature->Contrasenia_Remoto }}
-											<hr>
-											<strong>Serie Raton: </strong>{{ $cpufeature->Serie_Raton }}
-											<hr>
-											<strong>Serie Teclado: </strong>{{ $cpufeature->Serie_Teclado }}
-											<hr>
-											<strong>Serie Monitor: </strong>{{ $cpufeature->Serie_Monitor }}
-											<hr>
-											@endif
-											"
-											data-toggle="tooltip"
-											data-placement="top"
-											title="Ver más información"
-											class="btn-deleted">
-												<i class="fas fa-info-circle"></i>
-											</a>
+											@foreach($cpufeatures as $cpufeature)
+												@if( $equipment->Serie_Equipo == $cpufeature->Serie_Equipo)
+													@if(is_null($equipment->deleted_at))
+														<a href="{{ url('/admin/equipment/'.$equipment->id.'/info') }}"
+														data-path="admin/equipment" data-action="info"
+														data = " "
+														data-toggle="tooltip"
+														data-placement="top"
+														title="Ver Características"
+														class="btn-deleted"
+														style="margin-top: 5px; margin-bottom: 5px;">
+															<i class="fas fa-info-circle"></i>
+														</a>
+													@else
+													@endif
+												@endif
+											@endforeach
 											{{-- @endif --}}
-										@endforeach
+
 
 
 										@if(kvfj(Auth::user()->permissions, 'equipment_delete'))
 											@if(is_null($equipment->deleted_at))
-												<a href="{{ url('/admin/equipment/'.$equipment->id.'/delete') }}" data-path="admin/equipment" data-action="delete" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn-deleted">
+												<a href="{{ url('/admin/equipment/'.$equipment->id.'/delete') }}" data-path="admin/equipment" data-action="delete" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Eliminar" class="btn-deleted" style="margin-top: 5px; margin-bottom: 5px;">
 													<i class="fas fa-trash-alt"></i>
 												</a>
 											@else
-												<a href="{{ url('/admin/equipment/'.$equipment->id.'/restore') }}" data-path="admin/equipment" data-action="restore" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Restaurar" class="btn-deleted">
+												<a href="{{ url('/admin/equipment/'.$equipment->id.'/restore') }}" data-path="admin/equipment" data-action="restore" data-object="{{ $equipment->id }}" data-toggle="tooltip" data-placement="top" title="Restaurar" class="btn-deleted" style="margin-top: 5px; margin-bottom: 5px;">
 													<i class="fas fa-trash-restore"></i>
 												</a>
 											@endif
@@ -209,6 +184,8 @@
 		 $('#usuarios').DataTable({
 		 	responsive: true,
 		 	autoWidth: false,
+		 	processing: true,
+		 	serverSider: true,
 		 	"language": {
             "lengthMenu": "Mostrar " +
             			   '<select class="custom-select  form-control" style="width: 85px;"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option><option value="-1">Todos</option></select>' +
