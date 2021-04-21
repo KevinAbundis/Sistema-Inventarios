@@ -73,6 +73,7 @@ function user_permissions(){
 				'equipment_add' => 'Puede agregar equipos de cómputo al sistema.',
 				'equipment_edit' => 'Puede editar los equipos de cómputo del sistema.',
 				'equipment_delete' => 'Puede eliminar los equipos de cómputo del sistema.',
+				'equipment_output' => 'Puede realizar salidas de equipos de cómputo.',
 			]
 		],
 

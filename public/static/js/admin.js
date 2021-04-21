@@ -10,6 +10,16 @@ document.addEventListener('DOMContentLoaded', function(){
 	var avatar_change_overlay = document.getElementById('avatar_change_overlay');
 	var input_file_avatar = document.getElementById('input_file_avatar');
 
+	var serie_equipo = document.getElementById('Serie_Equipo');
+
+	if(serie_equipo){
+		serie_equipo.addEventListener('change', function(){
+			var url = base+ '/admin/equipment/output' + '/' + serie_equipo.value;
+			window.location.href = url;
+			// console.log(url);
+		})
+	}
+
 	if(btn_avatar_edit){
 		btn_avatar_edit.addEventListener('click', function(e){
 			e.preventDefault();

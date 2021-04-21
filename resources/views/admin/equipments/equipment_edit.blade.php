@@ -37,7 +37,15 @@
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-		    						{!!Form::select('Sucursal', ['Matriz' => 'Matriz', 'Chilpancingo' => 'Chilpancingo', 'Zihuatanejo' => 'Zihuatanejo', 'Diamante' => 'Diamante', 'Farallon' => 'Farallon', 'BuickGMC_Acapulco' => 'BuickGMC_Acapulco', 'BuickGMC_Chilpancingo' => 'BuickGMC_Chilpancingo'], $equipment->Sucursal, ['class' => 'form-select'])!!}
+		    						{!!Form::select('Sucursal', [
+		    							'Matriz' => 'Matriz',
+		    							'Chilpancingo' => 'Chilpancingo',
+		    							'Zihuatanejo' => 'Zihuatanejo',
+		    							'Diamante' => 'Diamante',
+		    							'Farallon' => 'Farallon',
+		    							'BuickGMC_Acapulco' => 'BuickGMC_Acapulco',
+		    							'BuickGMC_Chilpancingo' => 'BuickGMC_Chilpancingo'
+		    							], $equipment->Sucursal, ['class' => 'form-select'])!!}
 						</div>
 				</div>
 
@@ -47,7 +55,31 @@
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-		    						{!!Form::select('Departamento', ['Gerencia' => 'Gerencia', 'Ventas' => 'Ventas', 'Contabilidad' => 'Contabilidad', 'BDC_Ventas' => 'BDC_Ventas', 'SuAuto' => 'SuAuto', 'CRM_PosVenta' => 'CRM_PosVenta', 'Refacciones' => 'Refacciones', 'Servicio' => 'Servicio', 'Caja' => 'Caja', 'Sistemas' => 'Sistemas', 'Capacitacion' => 'Capacitacion', 'Otros_Equipamentos' => 'Otros_Equipamentos', 'Almacen' => 'Almacen', 'Reparacion' => 'Reparacion'], $equipment->Departamento, ['class' => 'form-select'])!!}
+		    						{!!Form::select('Departamento', [
+		    							'Direccion' => 'Direccion',
+		    							'Gerencia' => 'Gerencia',
+		    							'Ventas' => 'Ventas',
+										'Tesoreria' => 'Tesoreria',
+										'GM_Financial' => 'GM_Financial',
+		    							'Contabilidad' => 'Contabilidad',
+										'Recursos_Humanos' => 'Recursos_Humanos',
+										'BDC' => 'BDC',
+										'BDC_Ventas' => 'BDC_Ventas',
+										'Credito_Y_Cobranza' => 'Credito_Y_Cobranza',
+		    							'SuAuto' => 'SuAuto',
+		    							'CRM_PosVenta' => 'CRM_PosVenta',
+		    							'Refacciones' => 'Refacciones',
+		    							'Servicio' => 'Servicio',
+										'Control' => 'Control',
+		    							'Caja' => 'Caja',
+										'Mercadotecnia' => 'Mercadotecnia',
+		    							'Sistemas' => 'Sistemas',
+		    							'Capacitacion' => 'Capacitacion',
+										'Switch' => 'Switch',
+		    							'Otros_Equipamentos' => 'Otros_Equipamentos',
+		    							'Almacen' => 'Almacen',
+		    							'Reparacion' => 'Reparacion',
+		    							], $equipment->Departamento, ['class' => 'form-select'])!!}
 						</div>
 				</div>
 			</div>
@@ -70,7 +102,18 @@
 						<span class="input-group-text" id="basic-addon1">
 							<i class="fas fa-keyboard"></i>
 						</span>
-						{!!Form::select('Tipo_Hardware', ['CPU' => 'CPU', 'Monitor' => 'Monitor', 'Teclado' => 'Teclado', 'Raton' => 'Raton', 'Impresora' => 'Impresora', 'Telefono' => 'Telefono', 'Switch' => 'Switch', 'Modem' => 'Modem', 'Laptop' => 'Laptop', 'Otro_Equipo' => 'Otro_Equipo'], $equipment->Tipo_Hardware, ['class' => 'form-select'])!!}
+						{!!Form::select('Tipo_Hardware', [
+							'CPU' => 'CPU',
+							'Monitor' => 'Monitor',
+							'Teclado' => 'Teclado',
+							'Raton' => 'Raton',
+							'Impresora' => 'Impresora',
+							'Telefono' => 'Telefono',
+							'Switch' => 'Switch',
+							'Modem' => 'Modem',
+							'Laptop' => 'Laptop',
+							'Otro_Equipo' => 'Otro_Equipo'
+							], $equipment->Tipo_Hardware, ['class' => 'form-select'])!!}
 					</div>
 				</div>
 

@@ -34,13 +34,13 @@
 					</a>
 				</li>
 				@endif
-				{{-- @if(kvfj(Auth::user()->permissions, 'user_add')) --}}
+				@if(kvfj(Auth::user()->permissions, 'equipment_output'))
 				<li>
 					<a href="{{ url('/admin/equipment/output') }}">
 						<i class="fas fa-external-link-square-alt"></i>  Realizar Salida
 					</a>
 				</li>
-				{{-- @endif --}}
+				@endif
 				<li>
 					<a href="#"> Filtrar <i class="fas fa-angle-down"></i></a>
 					<ul class="shadow">

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Validator, Image, Hash, Auth, Mail, Str, Config;
 use App\Models\Equipment;
 use App\Models\CPUFeatures;
+use App\Models\Outputs;
 
 class EquipmentsController extends Controller
 {
@@ -205,6 +206,45 @@ class EquipmentsController extends Controller
         $cpufeatures = CPUFeatures::all();
         $data = ['equipment' => $equipment, 'cpufeatures' => $cpufeatures];
         return view('admin.equipments.equipment_info', $data);
+    }
+
+    public function getEquipmentOutput(){
+    $equipments = Equipment::select('Serie_Equipo')->orderBy('Serie_Equipo', 'asc')->get();
+    $data = ['equipments' => $equipments];
+    return view('admin.equipments.equipment_output', $data);
+    }
+
+    public function getEquipmentOutputDatos($serie_equipo){
+    $equipments = Equipment::where('Serie_Equipo', $serie_equipo)->get();
+    $cpufeatures = CPUFeatures::where('Serie_Equipo', $serie_equipo)->get();
+    $data = ['equipments' => $equipments, 'cpufeatures' => $cpufeatures];
+    return view('admin.equipments.equipment_output_datos', $data);
+    }
+
+    public function postEquipmentOutput(Request $request){
+
+        $validator = Validator::make($request->all(), [], []);
+        if($validator->fails()):
+            return back()->with('message','Se ha producido un error.')->with('typealert','danger');
+        else:
+            $output = new Outputs;
+            $output->Nombre_Usuario = e($request->get('Nombre_Usuario'));
+            $output->Descripcion = e($request->input('Descripcion'));
+            $output->Marca = e($request->input('Marca'));
+            $output->Modelo = e($request->input('Modelo'));
+            $output->Serie_Equipo = e($request->input('Serie_Equipo'));
+            $output->Service_Tag = e($request->input('Service_Tag'));
+            $output->Service_Code = e($request->input('Service_Code'));
+            $output->Sucursal_Entrega = 'Matriz';
+            $output->Sucursal_Recibe = e($request->input('Sucursal_Recibe'));
+            $output->Departamento = e($request->input('Departamento'));
+            $output->Ubicacion = e($request->input('Ubicacion'));
+            $output->Fecha_Salida = e($request->input('Fecha_Salida'));
+
+            if($output->save()):
+                return redirect('/admin/equipments/all')->with('message','Salida de Equipo realizada con éxito.')->with('typealert','success');
+            endif;
+        endif;
     }
 
 

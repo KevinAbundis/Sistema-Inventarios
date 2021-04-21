@@ -32,6 +32,10 @@ Route::prefix('/admin')->group(function(){
 	Route::post('/equipment/{id}/edit/features', 'Admin\EquipmentsController@postEquipmentEditFeatures')->name('equipment_edit');
 	Route::get('/equipment/{id}/delete', 'Admin\EquipmentsController@getEquipmentDelete')->name('equipment_delete');
 	Route::get('/equipment/{id}/restore', 'Admin\EquipmentsController@getEquipmentRestore')->name('equipment_delete');
+	Route::get('/equipment/output', 'Admin\EquipmentsController@getEquipmentOutput')->name('equipment_output');
+	Route::get('/equipment/output/{serie_equipo}', 'Admin\EquipmentsController@getEquipmentOutputDatos')->name('equipment_output');
+	Route::post('/equipment/output', 'Admin\EquipmentsController@postEquipmentOutput')->name('equipment_output');
+
 
 
 
