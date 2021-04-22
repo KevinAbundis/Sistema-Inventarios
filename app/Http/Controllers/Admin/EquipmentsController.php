@@ -74,7 +74,9 @@ class EquipmentsController extends Controller
     }
 
     public function getEquipmentAddFeatures(){
-        return view('admin.equipments.equipment_add_features');
+        $equipments = Equipment::select('Serie_Equipo')->where('Tipo_Hardware', 'CPU')->orWhere('Tipo_Hardware', 'Laptop')->orderBy('Serie_Equipo', 'asc')->get();
+        $data = ['equipments' => $equipments];
+        return view('admin.equipments.equipment_add_features', $data);
     }
 
     public function postEquipmentAddFeatures(Request $request){
@@ -112,7 +114,7 @@ class EquipmentsController extends Controller
             $cpufeature->Serie_Monitor = e($request->input('Serie_Monitor'));
 
             if($cpufeature->save()):
-                return redirect('/admin/equipments/all')->with('message','Características del Equipo agregadas con éxito.')->with('typealert','success');
+                return redirect('/admin/equipments/all')->with('message','Características del equipo agregadas con éxito.')->with('typealert','success');
             endif;
         endif;
     }
@@ -242,7 +244,7 @@ class EquipmentsController extends Controller
             $output->Fecha_Salida = e($request->input('Fecha_Salida'));
 
             if($output->save()):
-                return redirect('/admin/equipments/all')->with('message','Salida de Equipo realizada con éxito.')->with('typealert','success');
+                return redirect('/admin/equipments/all')->with('message','Salida de equipo realizada con éxito.')->with('typealert','success');
             endif;
         endif;
     }

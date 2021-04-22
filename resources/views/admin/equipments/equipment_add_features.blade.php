@@ -27,7 +27,15 @@
 		    						<span class="input-group-text" id="basic-addon1">
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
-							{!!Form::text('Serie_Equipo', null, ['class' => 'form-control', 'required'])!!}
+							{{-- {!!Form::text('Serie_Equipo', null, ['class' => 'form-control', 'required'])!!} --}}
+									<select name="Serie_Equipo" class="form-select">
+		    								<option value="0">Selecciona Número de Serie ...</option>
+		    								@foreach ($equipments as $equipment)
+			    								<option value="{{ $equipment->Serie_Equipo }}">
+			    									{{ $equipment->Serie_Equipo }}
+			    								</option>
+		    								@endforeach
+		    							</select>
 						</div>
 				</div>
 
