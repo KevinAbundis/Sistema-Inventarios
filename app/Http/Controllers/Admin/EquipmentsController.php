@@ -243,8 +243,20 @@ class EquipmentsController extends Controller
             $output->Ubicacion = e($request->input('Ubicacion'));
             $output->Fecha_Salida = e($request->input('Fecha_Salida'));
 
+            //Si se realiza una salida se mofica la sucursal, departamento y ubicación a donde
+            //se manda el equipo de cómputo
+            $serie_equipo = e($request->input('Serie_Equipo'));
+            $id_equipo = Equipment::select('id')->where('Serie_Equipo', $serie_equipo )->first();
+
+            $equipment = Equipment::findOrFail($id_equipo->id);
+            $equipment->Sucursal = e($request->input('Sucursal_Recibe'));
+            $equipment->Departamento = e($request->input('Departamento'));
+            $equipment->Ubicacion = e($request->input('Ubicacion'));
+
             if($output->save()):
+                if($equipment->save()):
                 return redirect('/admin/equipments/all')->with('message','Salida de equipo realizada con éxito.')->with('typealert','success');
+                endif;
             endif;
         endif;
     }

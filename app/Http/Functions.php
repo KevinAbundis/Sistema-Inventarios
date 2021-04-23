@@ -121,18 +121,18 @@ function getUserYears(){
 
 function getMonths($mode, $key){
 	$m = [
-		'01' => 'Enero',
-		'02' => 'Febrero',
-		'03' => 'Marzo',
-		'04' => 'Abril',
-		'05' => 'Mayo',
-		'06' => 'Junio',
-		'07' => 'Julio',
-		'08' => 'Agosto',
-		'09' => 'Septiembre',
-		'10' => 'Octubre',
-		'11' => 'Noviembre',
-		'12' => 'Diciembre'
+		'01' => 'ENERO',
+		'02' => 'FEBRERO',
+		'03' => 'MARZO',
+		'04' => 'ABRIL',
+		'05' => 'MAYO',
+		'06' => 'JUNIO',
+		'07' => 'JULIO',
+		'08' => 'AGOSTO',
+		'09' => 'SEPTIEMBRE',
+		'10' => 'OCTUBRE',
+		'11' => 'NOVIEMBRE',
+		'12' => 'DICIEMBRE'
 	];
 
 	if($mode == "list"){

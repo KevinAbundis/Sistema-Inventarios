@@ -36,6 +36,17 @@ Route::prefix('/admin')->group(function(){
 	Route::get('/equipment/output/{serie_equipo}', 'Admin\EquipmentsController@getEquipmentOutputDatos')->name('equipment_output');
 	Route::post('/equipment/output', 'Admin\EquipmentsController@postEquipmentOutput')->name('equipment_output');
 
+	//MÓDULO DE REPARACIÓN DE EQUIPOS
+
+
+	//MÓDULO DE MANTENIMIENTOS DE EQUIPOS
+
+
+	//MÓDULO DE REPORTES
+	Route::get('/reports/home', 'Admin\ReportsController@getReportsHome')->name('reports_home');
+	Route::get('/report/outputs/data', 'Admin\ReportsController@getReportOutputsData')->name('reports_home');
+	Route::post('/report/outputs', 'Admin\ReportsController@postReportOutputs')->name('reports_home');
+	Route::get('/report/outputs/movements', 'Admin\ReportsController@getReportOutputsMovements')->name('reports_home');
 
 
 
