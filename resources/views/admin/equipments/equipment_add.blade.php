@@ -58,7 +58,10 @@
 		    						{!!Form::select('Departamento', [
 		    							'Direccion' => 'Direccion',
 		    							'Gerencia' => 'Gerencia',
+										'Gerencia_Calidad' => 'Gerencia_Calidad',
 		    							'Ventas' => 'Ventas',
+										'Buick_GMC_Ventas' => 'Buick_GMC_Ventas',
+										'Chevrolet_Ventas' => 'Chevrolet_Ventas',
 										'Tesoreria' => 'Tesoreria',
 										'GM_Financial' => 'GM_Financial',
 		    							'Contabilidad' => 'Contabilidad',
@@ -76,9 +79,10 @@
 		    							'Sistemas' => 'Sistemas',
 		    							'Capacitacion' => 'Capacitacion',
 										'Switch' => 'Switch',
-		    							'Otros_Equipamentos' => 'Otros_Equipamentos',
+										'Camaras' => 'Camaras',
 		    							'Almacen' => 'Almacen',
 		    							'Reparacion' => 'Reparacion',
+										'Otros_Equipamentos' => 'Otros_Equipamentos',
 		    							], 0, ['class' => 'form-select'])!!}
 
 						</div>

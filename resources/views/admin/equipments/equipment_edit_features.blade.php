@@ -49,6 +49,7 @@
                                         <i class="fas fa-keyboard"></i>
                                     </span>
                                     {!!Form::select('Velocidad_Procesador', [
+                                        '2.30 MHz' => '2.30 MHz',
                                         '1.07 GHz' => '1.07 GHz',
                                         '1.14 GHz' => '1.14 GHz',
                                         '1.40 GHz' => '1.40 GHz',
@@ -79,6 +80,7 @@
                                         <i class="fas fa-keyboard"></i>
                                     </span>
                                 {!!Form::select('Memoria_RAM', [
+                                    '1 GB' => '1 GB',
                                     '2 GB' => '2 GB',
                                     '4 GB' => '4 GB',
                                     '6 GB' => '6 GB',
@@ -107,6 +109,7 @@
                             <i class="fas fa-keyboard"></i>
                         </span>
                         {!!Form::select('Sistema_Operativo', [
+                            'Windows XP' => 'Windows XP',
                             'Windows 7 x86' => 'Windows 7 x86',
                             'Windows 7 x64' => 'Windows 7 x64',
                             'Windows 8 x86' => 'Windows 8 x86',

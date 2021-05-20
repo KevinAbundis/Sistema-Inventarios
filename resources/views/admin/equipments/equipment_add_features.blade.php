@@ -56,22 +56,23 @@
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
 		    						{!!Form::select('Velocidad_Procesador', [
-		    							'1.07 GHz' => '1.07 GHz',
-		    							'1.14 GHz' => '1.14 GHz',
-		    							'1.40 GHz' => '1.40 GHz',
-		    							'1.50 GHz' => '1.50 GHz',
-		    							'2.0 GHz' => '2.0 GHz',
-		    							'2.20 GHz' => '2.20 GHz',
-		    							'2.33 GHz' => '2.33 GHz',
-		    							'2.40 GHz' => '2.40 GHz',
-		    							'2.60 GHz' => '2.60 GHz',
-		    							'2.66 GHz' => '2.66 GHz',
-		    							'2.80 GHz' => '2.80 GHz',
-		    							'3.0 GHz' => '3.0 GHz',
-		    							'3.20 GHz' => '3.20 GHz',
-		    							'3.60 GHz' => '3.60 GHz',
-		    							'3.70 GHz' => '3.70 GHz',
-		    							'3.90 GHz' => '3.90 GHz',
+		    							'2.30 MHz' => '2.30 MHz',
+                                        '1.07 GHz' => '1.07 GHz',
+                                        '1.14 GHz' => '1.14 GHz',
+                                        '1.40 GHz' => '1.40 GHz',
+                                        '1.50 GHz' => '1.50 GHz',
+                                        '2.0 GHz' => '2.0 GHz',
+                                        '2.20 GHz' => '2.20 GHz',
+                                        '2.33 GHz' => '2.33 GHz',
+                                        '2.40 GHz' => '2.40 GHz',
+                                        '2.60 GHz' => '2.60 GHz',
+                                        '2.66 GHz' => '2.66 GHz',
+                                        '2.80 GHz' => '2.80 GHz',
+                                        '3.0 GHz' => '3.0 GHz',
+                                        '3.20 GHz' => '3.20 GHz',
+                                        '3.60 GHz' => '3.60 GHz',
+                                        '3.70 GHz' => '3.70 GHz',
+                                        '3.90 GHz' => '3.90 GHz',
 		    							], 0, ['class' => 'form-select'])!!}
 						</div>
 				</div>
@@ -86,12 +87,13 @@
 		    							<i class="fas fa-keyboard"></i>
 		    						</span>
 		    					{!!Form::select('Memoria_RAM', [
-		    						'2 GB' => '2 GB',
-		    						'4 GB' => '4 GB',
-		    						'6 GB' => '6 GB',
-		    						'8 GB' => '8 GB',
-		    						'12 GB' => '12 GB',
-		    						'16 GB' => '16 GB',
+		    						'1 GB' => '1 GB',
+                                    '2 GB' => '2 GB',
+                                    '4 GB' => '4 GB',
+                                    '6 GB' => '6 GB',
+                                    '8 GB' => '8 GB',
+                                    '12 GB' => '12 GB',
+                                    '16 GB' => '16 GB',
 		    						], 0, ['class' => 'form-select'])!!}
 						</div>
 				</div>
@@ -114,12 +116,13 @@
 							<i class="fas fa-keyboard"></i>
 						</span>
 						{!!Form::select('Sistema_Operativo', [
-							'Windows 7 x86' => 'Windows 7 x86',
-							'Windows 7 x64' => 'Windows 7 x64',
-							'Windows 8 x86' => 'Windows 8 x86',
-							'Windows 8 x64' => 'Windows 8 x64',
-							'Windows 10 x86' => 'Windows 10 x86',
-							'Windows 10 x64' => 'Windows 10 x64',
+							'Windows XP' => 'Windows XP',
+                            'Windows 7 x86' => 'Windows 7 x86',
+                            'Windows 7 x64' => 'Windows 7 x64',
+                            'Windows 8 x86' => 'Windows 8 x86',
+                            'Windows 8 x64' => 'Windows 8 x64',
+                            'Windows 10 x86' => 'Windows 10 x86',
+                            'Windows 10 x64' => 'Windows 10 x64',
 							], 0, ['class' => 'form-select'])!!}
 					</div>
 				</div>
