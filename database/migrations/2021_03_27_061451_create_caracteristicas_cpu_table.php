@@ -30,9 +30,9 @@ class CreateCaracteristicasCpuTable extends Migration
             $table->string('Contrasenia_CPU')->nullable();
             $table->string('Remoto')->nullable();
             $table->string('Contrasenia_Remoto')->nullable();
-            $table->string('Serie_Raton')->nullable();
-            $table->string('Serie_Teclado')->nullable();
-            $table->string('Serie_Monitor')->nullable();
+            // $table->string('Serie_Raton')->nullable();
+            // $table->string('Serie_Teclado')->nullable();
+            // $table->string('Serie_Monitor')->nullable();
             $table->timestamps();
         });
     }

@@ -227,7 +227,7 @@
                 </div>
             </div>
 
-            <div class="row mtop16">
+            {{-- <div class="row mtop16">
                 <div class="col-md-4">
                         <label for="Serie_Raton">Serie Raton:</label>
                             <div class="input-group">
@@ -258,7 +258,7 @@
                         {!!Form::text('Serie_Monitor', $cpufeature->Serie_Monitor, ['class' => 'form-control'])!!}
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row mtop32">
                 <div class="col-md-12">

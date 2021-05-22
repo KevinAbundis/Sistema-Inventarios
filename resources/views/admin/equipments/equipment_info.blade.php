@@ -65,17 +65,17 @@
 
 							<p style="font-size: 1.5em;"><strong>Usuario:</strong> {{ $cpufeature->Usuario }}</p>
 
-							<p style="font-size: 1.5em;"><strong>Contrasenia CPU:</strong> {{ $cpufeature->Contrasenia_CPU }}</p>
+							<p style="font-size: 1.5em;"><strong>Contraseña CPU:</strong> {{ $cpufeature->Contrasenia_CPU }}</p>
 
 							<p style="font-size: 1.5em;"><strong>Remoto:</strong> {{ $cpufeature->Remoto }}</p>
 
-							<p style="font-size: 1.5em;"><strong>Contrasenia Remoto:</strong> {{ $cpufeature->Contrasenia_Remoto }}</p>
+							<p style="font-size: 1.5em;"><strong>Contraseña Remoto:</strong> {{ $cpufeature->Contrasenia_Remoto }}</p>
 
-							<p style="font-size: 1.5em;"><strong>Serie Raton:</strong> {{ $cpufeature->Serie_Raton }}</p>
+							{{-- <p style="font-size: 1.5em;"><strong>Serie Raton:</strong> {{ $cpufeature->Serie_Raton }}</p>
 
 							<p style="font-size: 1.5em;"><strong>Serie Teclado:</strong> {{ $cpufeature->Serie_Teclado }}</p>
 
-							<p style="font-size: 1.5em;"><strong>Serie Monitor:</strong> {{ $cpufeature->Serie_Monitor }}</p>
+							<p style="font-size: 1.5em;"><strong>Serie Monitor:</strong> {{ $cpufeature->Serie_Monitor }}</p> --}}
 						</div>
 					</div>
 				@endif
