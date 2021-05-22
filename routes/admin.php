@@ -43,10 +43,13 @@ Route::prefix('/admin')->group(function(){
 
 
 	//MÓDULO DE REPORTES
+	Route::get('/report/inventory/data', 'Admin\ReportsController@getReportInventoryData')->name('reports_home');
+	Route::post('/report/inventory', 'Admin\ReportsController@postReportInventory')->name('reports_home');
 	Route::get('/reports/home', 'Admin\ReportsController@getReportsHome')->name('reports_home');
 	Route::get('/report/outputs/data', 'Admin\ReportsController@getReportOutputsData')->name('reports_home');
 	Route::post('/report/outputs', 'Admin\ReportsController@postReportOutputs')->name('reports_home');
 	Route::get('/report/outputs/movements', 'Admin\ReportsController@getReportOutputsMovements')->name('reports_home');
+
 
 
 

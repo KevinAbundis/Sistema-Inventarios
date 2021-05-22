@@ -17,6 +17,21 @@
 
 		<div class="page_user mtop16" style="margin-left: 8px; margin-right: 8px">
 			<div class="row">
+
+				<div class="col-md-3 d-flex mb16">
+					<div class="panel shadow">
+						<div class="header">
+							<a href="{{ url('/admin/report/inventory/data') }}">
+								<h2 class="title"><i class="fas fa-file-invoice"></i>	Reporte Inventario de Equipos</h2>
+							</a>
+						</div>
+						<div class="inside">
+							<h6>Este reporte sirve para generar un EXCEL con el inventario de los equipos.</h6>
+						</div>
+					</div>
+				</div>
+
+
 				<div class="col-md-3 d-flex mb16">
 					<div class="panel shadow">
 						<div class="header">
@@ -38,7 +53,7 @@
 							</a>
 						</div>
 						<div class="inside">
-							<h6>Este reporte sirve para generar un PDF con la información de todas las salidas de los equipos.</h6>
+							<h6>Este reporte sirve para generar un PDF con la información de las salidas de los equipos.</h6>
 						</div>
 					</div>
 				</div>

@@ -22,7 +22,7 @@
 					@foreach($cpufeatures as $cpufeature)
 						@if( $equipment->Serie_Equipo == $cpufeature->Serie_Equipo)
 							<a href="{{ url('/admin/equipment/'.$cpufeature->id.'/edit/features') }}">
-								<i class="fas fa-plus-circle"></i>  Editar Características de Equipo
+								<i class="fas fa-edit"></i>	  Editar Características de Equipo
 							</a>
 						@endif
 					@endforeach

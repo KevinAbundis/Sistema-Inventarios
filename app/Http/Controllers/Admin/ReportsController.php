@@ -10,6 +10,8 @@ use App\Models\Outputs;
 
 use Validator, Image, Hash, Auth, Mail, Str, Config;
 
+use App\Exports\EquipmentsExport;
+
 class ReportsController extends Controller
 {
     public function __construct(){
@@ -58,6 +60,17 @@ class ReportsController extends Controller
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('admin.reports.report_outputs_movements', $data)->setPaper('a4', 'landscape');
         return $pdf->stream();
+    }
+
+     public function getReportInventoryData(){
+        return view('admin.reports.report_inventory_data');
+    }
+
+    public function postReportInventory(Request $request){
+
+        $sucursal = e($request->input('Sucursal'));
+
+        return (new EquipmentsExport)->forSucursal($sucursal)->download('inventory.xlsx');
     }
 
 
