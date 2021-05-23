@@ -41,7 +41,7 @@
 			@endif
 			@if(kvfj(Auth::user()->permissions, 'repair_list'))
 			<li>
-				<a href="{{ url('/admin/repairs/all') }}" class="lk-repair_list">
+				<a href="{{ url('/admin/repairs/all') }}" class="lk-repair_list lk-repair_output lk-repair_edit">
 					<i class="fas fa-tools"></i>Reparación de Equipos de Cómputo</a>
 			</li>
 			@endif

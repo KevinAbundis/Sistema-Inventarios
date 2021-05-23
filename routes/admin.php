@@ -37,6 +37,7 @@ Route::prefix('/admin')->group(function(){
 	Route::post('/equipment/output', 'Admin\EquipmentsController@postEquipmentOutput')->name('equipment_output');
 
 	//MÓDULO DE REPARACIÓN DE EQUIPOS
+	Route::get('/repairs/{filter}','Admin\RepairsController@getRepairHome')->name('repair_list');
 
 
 	//MÓDULO DE MANTENIMIENTOS DE EQUIPOS

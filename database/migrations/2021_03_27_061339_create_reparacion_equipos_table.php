@@ -26,7 +26,8 @@ class CreateReparacionEquiposTable extends Migration
             $table->string('Ubicacion');
             $table->date('Fecha_Salida');
             $table->string('Firma_Salida');
-            $table->text('Motivo_Salida');
+            $table->string('Motivo_Salida');
+            $table->string('Lugar_Salida');
             $table->date('Fecha_Entrega')->nullable();
             $table->string('Firma_Entrega')->nullable();
             $table->string('Estado_Entrega')->nullable();

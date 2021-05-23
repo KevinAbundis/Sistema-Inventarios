@@ -73,7 +73,7 @@ function user_permissions(){
 				'equipment_add' => 'Puede agregar equipos de cómputo al sistema.',
 				'equipment_edit' => 'Puede editar los equipos de cómputo del sistema.',
 				'equipment_delete' => 'Puede eliminar los equipos de cómputo del sistema.',
-				'equipment_output' => 'Puede realizar salidas de equipos de cómputo.',
+				'equipment_output' => 'Puede realizar salidas a sucursales de equipos de cómputo .',
 			]
 		],
 
@@ -81,7 +81,9 @@ function user_permissions(){
 			'icon' => '<i class="fas fa-tools"></i>',
 			'title' => 'Módulo de Reparación de Equipos de Cómputo',
 			'keys' =>[
-				'repair_list' => 'Puede ver el listado de los equipos de cómputo en reparación.',
+				'repair_list' => 'Puede ver el listado de las reparaciones de equipos de cómputo.',
+				'repair_output' => 'Puede realizar salidas a reparación de equipos de cómputo.',
+				'repair_edit' => 'Puede editar las reparaciones de equipos de cómputo.',
 			]
 		],
 
