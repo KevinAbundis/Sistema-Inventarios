@@ -41,6 +41,7 @@ Route::prefix('/admin')->group(function(){
 
 
 	//MÓDULO DE MANTENIMIENTOS DE EQUIPOS
+	Route::get('/maintenances/{filter}','Admin\MaintenancesController@getMaintenanceHome')->name('maintenance_list');
 
 
 	//MÓDULO DE REPORTES

@@ -92,6 +92,8 @@ function user_permissions(){
 			'title' => 'Módulo de Mantenimiento de Equipos de Cómputo',
 			'keys' =>[
 				'maintenance_list' => 'Puede ver el listado de los mantenimientos a equipos de cómputo.',
+				'maintenance_program' => 'Puede programar mantenimientos a equipos de cómputo.',
+				'maintenance_edit' => 'Puede editar los mantenimientos a equipos de cómputo.',
 			]
 		],
 

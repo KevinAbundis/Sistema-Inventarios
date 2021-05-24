@@ -26,8 +26,8 @@ class CreateMantenimientoEquiposTable extends Migration
             $table->string('Hora_Programada');
             $table->date('Fecha_Efectiva')->nullable();
             $table->string('Hora_Efectiva')->nullable();
-            $table->text('Tipo_Mantenimiento');
-            $table->text('Observaciones');
+            $table->text('Tipo_Mantenimiento')->nullable();
+            $table->text('Observaciones')->nullable();
             $table->timestamps();
         });
     }

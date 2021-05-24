@@ -47,7 +47,7 @@
 			@endif
 			@if(kvfj(Auth::user()->permissions, 'maintenance_list'))
 			<li>
-				<a href="{{ url('/admin/maintenances/all') }}" class="lk-maintenance_list">
+				<a href="{{ url('/admin/maintenances/all') }}" class="lk-maintenance_list lk-maintenance_program lk-maintenance_edit">
 					<i class="fas fa-toolbox"></i>Mantenimiento de Equipos de Cómputo</a>
 			</li>
 			@endif
