@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Equipment;
+use App\Models\Repairs;
+use App\Models\Maintenances;
 
 class DashboardController extends Controller
 {
@@ -29,6 +31,9 @@ class DashboardController extends Controller
         $laptops = Equipment::where('Tipo_Hardware', 'Laptop')->count();
         $otrosequipos = Equipment::where('Tipo_Hardware', 'Otro_Equipo')->count();
 
+        $repairs = Repairs::where('Fecha_Entrega', null)->count();
+        $maintenances = Maintenances::where('Fecha_Efectiva', null)->count();
+
     	$data =
         [
             'users' => $users,
@@ -42,6 +47,9 @@ class DashboardController extends Controller
             'modems' => $modems,
             'laptops' => $laptops,
             'otrosequipos' => $otrosequipos,
+
+            'repairs' => $repairs,
+            'maintenances' => $maintenances,
         ];
 
     	return view('admin.dashboard', $data);

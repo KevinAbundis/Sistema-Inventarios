@@ -157,7 +157,7 @@
 					<h2 class="title"><i class="fas fa-tools"></i>	Equipos en Reparación</h2>
 				</div>
 				<div class="inside">
-					<div class="big_count">0</div>
+					<div class="big_count">{{ $repairs }}</div>
 				</div>
 			</div>
 		</div>
@@ -170,7 +170,7 @@
 					<h2 class="title"><i class="fas fa-toolbox"></i>	Próximos Mantenimientos</h2>
 				</div>
 				<div class="inside">
-					<div class="big_count">0</div>
+					<div class="big_count">{{ $maintenances }}</div>
 				</div>
 			</div>
 		</div>
