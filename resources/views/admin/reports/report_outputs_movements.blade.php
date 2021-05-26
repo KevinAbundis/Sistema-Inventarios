@@ -10,34 +10,34 @@
 		<table class="table" border="1" style="table-layout: auto; width: 100%; border-collapse: collapse;">
 			<thead>
 				<tr>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						ID
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						NOMBRE USUARIO
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						DESCRIPCION
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						MARCA
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						MODELO
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						NO. SERIE
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						SERVICE TAG / SERVICE CODE
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						SUCURSAL DESTINO
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold; font-size: 9">
 						DEPARTAMENTO
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; background-color: #134A9C; color: #ffffff; font-weight: bold;font-size: 9">
 						FECHA DE SALIDA
 					</td>
 				</tr>
@@ -45,34 +45,34 @@
 			<tbody>
 				@foreach($outputs as $output)
 				<tr>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->id }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->Nombre_Usuario }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->Descripcion }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->Marca }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->Modelo }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->Serie_Equipo }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->Service_Tag }} / {{ $output->Service_Code }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->Sucursal_Recibe }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 9">
 						{{ $output->Departamento }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 8">
 						{{ $output->Fecha_Salida }}
 					</td>
 				</tr>

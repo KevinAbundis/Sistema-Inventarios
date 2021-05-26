@@ -14,34 +14,37 @@
 	<p style="text-align: center;">:c</p>
 	<p style="text-align: center;">INTENTA CON OTROS DATOS</p>
 	@else
-		<p style="text-align: right; text-transform: uppercase;">
+		<p style="text-align: right; text-transform: uppercase; font-family:'Times New Roman'; font-size: 12">
 			ACAPULCO, GRO., A {{ $Fecha_Salida->format('d') }} DE {{ getMonths(null,$Fecha_Salida->format('m'))  }} DEL {{ $Fecha_Salida->format('Y') }}.
 		</p>
 		<br>
-		<h4>AT´N: SEGURIDAD</h4>
+		<p style="text-align: left; text-transform: uppercase; font-family:'Times New Roman'; font-size: 12; font-style: bold">
+			AT´N: SEGURIDAD</p>
 		<br>
-		<h4>SALE:</h4>
-		<p style="font-style: italic; text-decoration: underline; text-transform: uppercase;">EL SIGUIENTE EQUIPO PROPIEDAD DE DISTRIBUIDORA AUTOMOTRIZ ACAPULCO S.A. DE C.V. A LA SUCURSAL {{ $Sucursal }} PARA SER USADO EN EL ÁREA DE {{ $Departamento }}. </p>
+		<p style="text-align: left; text-transform: uppercase; font-family:'Times New Roman'; font-size: 12; font-style: bold">
+			SALE:</p>
+		<p style="font-style: italic; text-decoration: underline; text-transform: uppercase; font-family:'Times New Roman'; font-size: 12">
+			EL SIGUIENTE EQUIPO PROPIEDAD DE DISTRIBUIDORA AUTOMOTRIZ ACAPULCO S.A. DE C.V. A LA SUCURSAL {{ $Sucursal }} PARA SER USADO EN EL ÁREA DE {{ $Departamento }}. </p>
 		<br>
-		<table class="table" border="1" style="table-layout: auto; width: 100%; border-collapse: collapse;">
+		<table class="table" border="1" style="table-layout: auto; width: 100%; border-collapse: collapse; ">
 			<thead>
 				<tr>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-weight: bold; font-family:'Times New Roman'; font-size: 10">
 						DESCRIPCION
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-weight: bold; font-family:'Times New Roman'; font-size: 10">
 						MARCA
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-weight: bold; font-family:'Times New Roman'; font-size: 10">
 						MODELO
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-weight: bold; font-family:'Times New Roman'; font-size: 10">
 						NO. SERIE
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-weight: bold; font-family:'Times New Roman'; font-size: 10">
 						SERVICE TAG / SERVICE CODE
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-weight: bold; font-family:'Times New Roman'; font-size: 10">
 						DEPARTAMENTO
 					</td>
 				</tr>
@@ -49,39 +52,43 @@
 			<tbody>
 				@foreach($outputs as $output)
 				<tr>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-family:'Times New Roman'; font-size: 10">
 						{{ $output->Descripcion }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-family:'Times New Roman'; font-size: 10">
 						{{ $output->Marca }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-family:'Times New Roman'; font-size: 10">
 						{{ $output->Modelo }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-family:'Times New Roman'; font-size: 10">
 						{{ $output->Serie_Equipo }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-family:'Times New Roman'; font-size: 10">
 						{{ $output->Service_Tag }} / {{ $output->Service_Code }}
 					</td>
-					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center">
+					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 0.7em; font-family:'Times New Roman'; font-size: 10">
 						{{ $output->Departamento }}
 					</td>
 				</tr>
 				@endforeach
 			</tbody>
 		</table>
+		<p style="text-align: justify; text-transform: uppercase; font-family:'Times New Roman'; font-size: 10; font-style: bold">
+			EN LA INTELIGENCIA DE QUE CUALQUIER MAL USO Ó FALTANTE DE LA MISMA ME HAGO RESPONSABLE.</p>
 		<br>
-		<h4>EN LA INTELIGENCIA DE QUE CUALQUIER MAL USO Ó FALTANTE DE LA MISMA ME HAGO RESPONSABLE.</h4>
+		<p style="text-align: justify; text-transform: uppercase; font-family:'Times New Roman'; font-style: bold">
+			ATENTAMENTE</p>
 		<br>
-		<h4>ATENTAMENTE</h4>
+		<p style="text-align: justify; text-transform: uppercase; font-family:'Times New Roman'; font-size: 12">
+			ING. HENRY CRISTOPHER MARTÍNEZ OLEA</p>
+		<p style="text-align: justify; text-transform: uppercase; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12">
+			ENCARGADO DE SISTEMAS</p>
+		<br><br>
+		<p style="text-align: justify; text-transform: uppercase; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12; font-style: bold">
+			RECIBE</p>
 		<br>
-		<p>ING. HENRY CRISTOPHER MARTÍNEZ OLEA</p>
-		<p>ENCARGADO DE SISTEMAS</p>
-		<br>
-		<h4>RECIBE</h4>
-		<br>
-		<p style="text-transform: uppercase;">SUC. {{ $Sucursal }}</p>
+		<p style="text-align: justify; text-transform: uppercase; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12"">SUC. {{ $Sucursal }}</p>
 	@endif
 
 
