@@ -7,6 +7,12 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 <body>
+	@if($outputs == "[]")
+	<p style="text-align: center;">NO SE ENCONTRARON COINCIDENCIAS EN LA BASE DE DATOS</p>
+	<p style="text-align: center;">{{ $outputs }}</p>
+	<p style="text-align: center;">:c</p>
+	<p style="text-align: center;">INTENTA CON OTROS DATOS</p>
+	@else
 		<table class="table" border="1" style="table-layout: auto; width: 100%; border-collapse: collapse;">
 			<thead>
 				<tr>
@@ -73,12 +79,13 @@
 						{{ $output->Departamento }}
 					</td>
 					<td style="padding-top: 8px; padding-bottom: 8px; text-align: center; font-size: 8">
-						{{ $output->Fecha_Salida }}
+						{{ date('d-m-Y', strtotime($output->Fecha_Salida)) }}
 					</td>
 				</tr>
 				@endforeach
 			</tbody>
 		</table>
+	@endif
 
 </body>
 </html>

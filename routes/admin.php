@@ -50,10 +50,7 @@ Route::prefix('/admin')->group(function(){
 	Route::get('/reports/home', 'Admin\ReportsController@getReportsHome')->name('reports_home');
 	Route::get('/report/outputs/data', 'Admin\ReportsController@getReportOutputsData')->name('reports_home');
 	Route::post('/report/outputs', 'Admin\ReportsController@postReportOutputs')->name('reports_home');
-	Route::get('/report/outputs/movements', 'Admin\ReportsController@getReportOutputsMovements')->name('reports_home');
-
-
-
-
+	Route::get('/report/outputs/movements/data', 'Admin\ReportsController@getReportOutputsMovementsData')->name('reports_home');
+	Route::post('/report/outputs/movements', 'Admin\ReportsController@postReportOutputsMovements')->name('reports_home');
 
 });

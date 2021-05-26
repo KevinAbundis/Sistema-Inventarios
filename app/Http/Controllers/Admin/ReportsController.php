@@ -25,7 +25,7 @@ class ReportsController extends Controller
     	return view('admin.reports.home');
 	}
 
-     public function getReportOutputsData(){
+    public function getReportOutputsData(){
         return view('admin.reports.report_outputs_data');
     }
 
@@ -34,6 +34,7 @@ class ReportsController extends Controller
         $Fecha_Salida = e($request->input('Fecha_Salida'));
         $Sucursal = e($request->input('Sucursal'));
         $Departamento = e($request->input('Departamento'));
+
         $outputs = Outputs::where('Fecha_Salida', $Fecha_Salida)->where('Sucursal_Recibe', $Sucursal)->where('Departamento', $Departamento)->get();
 
         $Fecha_Salida = \Carbon\Carbon::parse($Fecha_Salida);
@@ -50,8 +51,17 @@ class ReportsController extends Controller
 		return $pdf->stream();
 	}
 
-    public function getReportOutputsMovements(){
-        $outputs = Outputs::all();
+    public function getReportOutputsMovementsData(){
+        return view('admin.reports.report_outputs_movements_data');
+    }
+
+    public function postReportOutputsMovements(Request $request){
+        //$outputs = Outputs::all();
+        $Fecha_Inicial = e($request->input('Fecha_Inicial'));
+        $Fecha_Final = e($request->input('Fecha_Final'));
+        $Sucursal = e($request->input('Sucursal'));
+
+        $outputs = Outputs::where('Sucursal_Recibe', $Sucursal)->whereBetween('Fecha_Salida', array($Fecha_Inicial, $Fecha_Final))->get();
 
         $data = [
             'outputs' => $outputs,

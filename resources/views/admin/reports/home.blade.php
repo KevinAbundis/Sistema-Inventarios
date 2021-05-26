@@ -26,7 +26,7 @@
 							</a>
 						</div>
 						<div class="inside">
-							<h6>Este reporte sirve para generar un EXCEL con el inventario de los equipos.</h6>
+							<h6>Este reporte sirve para generar un EXCEL del inventario de los equipos.</h6>
 						</div>
 					</div>
 				</div>
@@ -48,12 +48,12 @@
 				<div class="col-md-3 d-flex mb16">
 					<div class="panel shadow">
 						<div class="header">
-							<a href="{{ url('/admin/report/outputs/movements') }}">
+							<a href="{{ url('/admin/report/outputs/movements/data') }}">
 								<h2 class="title"><i class="fas fa-external-link-square-alt"></i> 	Reporte Movimientos de Salidas</h2>
 							</a>
 						</div>
 						<div class="inside">
-							<h6>Este reporte sirve para generar un PDF con la información de las salidas de los equipos.</h6>
+							<h6>Este reporte sirve para generar un PDF de los movimientos de salidas de los equipos.</h6>
 						</div>
 					</div>
 				</div>

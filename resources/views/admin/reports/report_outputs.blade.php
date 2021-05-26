@@ -88,9 +88,8 @@
 		<p style="text-align: justify; text-transform: uppercase; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12; font-style: bold">
 			RECIBE</p>
 		<br>
-		<p style="text-align: justify; text-transform: uppercase; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12"">SUC. {{ $Sucursal }}</p>
+		<p style="text-align: justify; text-transform: uppercase; font-family:Georgia, 'Times New Roman', Times, serif; font-size: 12">SUC. {{ $Sucursal }}</p>
 	@endif
-
 
 </body>
 </html>
