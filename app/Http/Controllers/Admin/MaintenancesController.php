@@ -38,6 +38,12 @@ class MaintenancesController extends Controller
     	return view('admin.maintenances.home', $data);
     }
 
+    public function getMaintenanceProgram(){
+        $equipments = Equipment::select('Serie_Equipo')->orderBy('Serie_Equipo', 'asc')->get();
+        $data = ['equipments' => $equipments];
+        return view('admin.maintenances.maintenance_program', $data);
+    }
+
 
 
 }
