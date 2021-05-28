@@ -42,4 +42,22 @@ class RepairsController extends Controller
     	return view('admin.repairs.home', $data);
     }
 
+    public function getRepairOutput(){
+        $equipments = Equipment::select('Serie_Equipo')->orderBy('Serie_Equipo', 'asc')->get();
+        $data = ['equipments' => $equipments];
+        return view('admin.repairs.repair_output', $data);
+    }
+
+    public function getRepairEdit($id){
+        $repair = Repairs::findOrFail($id);
+        $data = ['repair' => $repair];
+        return view('admin.repairs.repair_edit', $data);
+    }
+
+    public function getRepairDelivery($id){
+        $repair = Repairs::findOrFail($id);
+        $data = ['repair' => $repair];
+        return view('admin.repairs.repair_delivery', $data);
+    }
+
 }

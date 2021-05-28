@@ -38,6 +38,9 @@ Route::prefix('/admin')->group(function(){
 
 	//MÓDULO DE REPARACIÓN DE EQUIPOS
 	Route::get('/repairs/{filter}','Admin\RepairsController@getRepairHome')->name('repair_list');
+	Route::get('/repair/output','Admin\RepairsController@getRepairOutput')->name('repair_output');
+	Route::get('/repair/{id}/edit', 'Admin\RepairsController@getRepairEdit')->name('repair_edit');
+	Route::get('/repair/{id}/delivery', 'Admin\RepairsController@getRepairDelivery')->name('repair_edit');
 
 
 	//MÓDULO DE MANTENIMIENTOS DE EQUIPOS
