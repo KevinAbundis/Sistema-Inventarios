@@ -209,7 +209,7 @@
 
 			<div class="row mtop32">
 				<div class="col-md-12">
-					{!!Form::submit('Realizar Salida', ['class' => 'btn btn-primary', 'style' => 'float: right'])!!}
+					{!!Form::submit('Enviar a Reparación', ['class' => 'btn btn-primary', 'style' => 'float: right'])!!}
 				</div>
 			</div>
 
