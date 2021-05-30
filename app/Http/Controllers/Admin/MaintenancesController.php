@@ -44,6 +44,18 @@ class MaintenancesController extends Controller
         return view('admin.maintenances.maintenance_program', $data);
     }
 
+    public function getMaintenanceEdit($id){
+        $maintenance = Maintenances::findOrFail($id);
+        $data = ['maintenance' => $maintenance];
+        return view('admin.maintenances.maintenance_edit', $data);
+    }
+
+    public function getMaintenanceExecuted($id){
+        $maintenance = Maintenances::findOrFail($id);
+        $data = ['maintenance' => $maintenance];
+        return view('admin.maintenances.maintenance_executed', $data);
+    }
+
 
 
 }
