@@ -51,12 +51,16 @@ Route::prefix('/admin')->group(function(){
 
 
 	//MÓDULO DE REPORTES
+	Route::get('/reports/home', 'Admin\ReportsController@getReportsHome')->name('reports_home');
 	Route::get('/report/inventory/data', 'Admin\ReportsController@getReportInventoryData')->name('reports_home');
 	Route::post('/report/inventory', 'Admin\ReportsController@postReportInventory')->name('reports_home');
-	Route::get('/reports/home', 'Admin\ReportsController@getReportsHome')->name('reports_home');
 	Route::get('/report/outputs/data', 'Admin\ReportsController@getReportOutputsData')->name('reports_home');
 	Route::post('/report/outputs', 'Admin\ReportsController@postReportOutputs')->name('reports_home');
 	Route::get('/report/outputs/movements/data', 'Admin\ReportsController@getReportOutputsMovementsData')->name('reports_home');
 	Route::post('/report/outputs/movements', 'Admin\ReportsController@postReportOutputsMovements')->name('reports_home');
+	Route::get('/report/repairs/data', 'Admin\ReportsController@getReportRepairsData')->name('reports_home');
+	Route::post('/report/repairs', 'Admin\ReportsController@postReportRepairs')->name('reports_home');
+	Route::get('/report/maintenances/data', 'Admin\ReportsController@getReportMaintenancesData')->name('reports_home');
+	Route::post('/report/maintenances', 'Admin\ReportsController@postReportMaintenances')->name('reports_home');
 
 });

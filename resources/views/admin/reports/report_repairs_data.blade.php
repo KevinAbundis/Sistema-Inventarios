@@ -1,13 +1,13 @@
 @extends('admin.master')
 
-@section('title','Report Movements Outputs')
+@section('title','Report Repairs')
 
 @section('breadcrumb')
 <li class="breadcrumb-item">
 	<a href="{{ url('/admin/reports/home') }}"><i class="fas fa-file-contract"></i>	Reportes</a>
 </li>
 <li class="breadcrumb-item">
-	<a href="{{ url('/admin/report/outputs/movements/data') }}"><i class="fas fa-external-link-square-alt"></i>	Reporte Movimientos de Salidas</a>
+	<a href="{{ url('/admin/report/repairs/data') }}"><i class="fas fa-tools"></i>	Reporte Reparaciones de Equipos</h2></a>
 </li>
 @endsection
 
@@ -15,11 +15,11 @@
 <div class="container-fluid">
 	<div class="panel shadow">
 		<div class="header">
-			<h2 class="title"><i class="fas fa-external-link-square-alt"></i>	Reporte Movimientos de Salidas</h2>
+			<h2 class="title"><i class="fas fa-tools"></i>	Reporte Reparaciones de Equipos</h2>
 		</div>
 
 		<div class="inside">
-			{!!Form::open(['url' => '/admin/report/outputs/movements', 'files' => true]) !!}
+			{!!Form::open(['url' => '/admin/report/repairs', 'files' => true]) !!}
 			<div class="row">
 				<div class="col-md-4">
 						<label for="Fecha_Inicial">Fecha Inicial:</label>
@@ -55,6 +55,7 @@
 		    							'Farallon' => 'Farallon',
 		    							'BuickGMC_Acapulco' => 'BuickGMC_Acapulco',
 		    							'BuickGMC_Chilpancingo' => 'BuickGMC_Chilpancingo',
+		    							'Todas' => 'Todas',
 		    							], 0, ['class' => 'form-select'])!!}
 						</div>
 				</div>
