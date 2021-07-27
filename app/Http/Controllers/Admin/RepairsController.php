@@ -48,6 +48,14 @@ class RepairsController extends Controller
         return view('admin.repairs.repair_output', $data);
     }
 
+    public function getRepairOutputDatos($serie_equipo_r){
+    $equipments = Equipment::where('Serie_Equipo', $serie_equipo_r)->get();
+    $cpufeatures = CPUFeatures::where('Serie_Equipo', $serie_equipo_r)->get();
+    $data = ['equipments' => $equipments, 'cpufeatures' => $cpufeatures];
+    return view('admin.repairs.repair_output_datos', $data);
+    }
+
+
     public function getRepairEdit($id){
         $repair = Repairs::findOrFail($id);
         $data = ['repair' => $repair];

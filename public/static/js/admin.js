@@ -11,10 +11,19 @@ document.addEventListener('DOMContentLoaded', function(){
 	var input_file_avatar = document.getElementById('input_file_avatar');
 
 	var serie_equipo = document.getElementById('Serie_Equipo');
+	var serie_equipo_r = document.getElementById('Serie_Equipo_R');
 
 	if(serie_equipo){
 		serie_equipo.addEventListener('change', function(){
 			var url = base+ '/admin/equipment/output' + '/' + serie_equipo.value;
+			window.location.href = url;
+			// console.log(url);
+		})
+	}
+
+	if(serie_equipo_r){
+		serie_equipo_r.addEventListener('change', function(){
+			var url = base+ '/admin/repair/output' + '/' + serie_equipo_r.value;
 			window.location.href = url;
 			// console.log(url);
 		})
