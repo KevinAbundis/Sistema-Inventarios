@@ -109,9 +109,9 @@ class EquipmentsController extends Controller
             $cpufeature->Contrasenia_CPU = e($request->input('Contrasenia_CPU'));
             $cpufeature->Remoto = e($request->input('Remoto'));
             $cpufeature->Contrasenia_Remoto = e($request->input('Contrasenia_Remoto'));
-            $cpufeature->Serie_Raton = e($request->input('Serie_Raton'));
-            $cpufeature->Serie_Teclado = e($request->input('Serie_Teclado'));
-            $cpufeature->Serie_Monitor = e($request->input('Serie_Monitor'));
+            // $cpufeature->Serie_Raton = e($request->input('Serie_Raton'));
+            // $cpufeature->Serie_Teclado = e($request->input('Serie_Teclado'));
+            // $cpufeature->Serie_Monitor = e($request->input('Serie_Monitor'));
 
             if($cpufeature->save()):
                 return redirect('/admin/equipments/all')->with('message','Características del equipo agregadas con éxito.')->with('typealert','success');
@@ -175,9 +175,9 @@ class EquipmentsController extends Controller
             $cpufeature->Contrasenia_CPU = e($request->input('Contrasenia_CPU'));
             $cpufeature->Remoto = e($request->input('Remoto'));
             $cpufeature->Contrasenia_Remoto = e($request->input('Contrasenia_Remoto'));
-            $cpufeature->Serie_Raton = e($request->input('Serie_Raton'));
-            $cpufeature->Serie_Teclado = e($request->input('Serie_Teclado'));
-            $cpufeature->Serie_Monitor = e($request->input('Serie_Monitor'));
+            // $cpufeature->Serie_Raton = e($request->input('Serie_Raton'));
+            // $cpufeature->Serie_Teclado = e($request->input('Serie_Teclado'));
+            // $cpufeature->Serie_Monitor = e($request->input('Serie_Monitor'));
 
             if($cpufeature->save()):
                 return redirect('/admin/equipments/all')->with('message','Características del equipo actualizados con éxito.')->with('typealert','success');
