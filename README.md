@@ -1,46 +1,46 @@
-## Inventory System for Computer Equipment
+## Sistema de Inventarios de Equipos de Cómputo
 
-Main Screen
+Pantalla Principal
 
 [![P-gina-principal.jpg](https://i.postimg.cc/fRxS1H79/P-gina-principal.jpg)](https://postimg.cc/xX1dz34f)
 
-Login
+Inicio de Sesión
 
 ![](images/Inicio%20de%20sesión.jpeg)
 
-Quick Statistics
+Estadísticas Rápidas
 
 ![](images/Estadísticas%20rápidas.jpeg)
 
-Users
+Usuarios
 
 ![](images/Listado%20de%20usuarios.jpeg)
 
-Computer Equipment
+Equipos de Cómputo
 
 ![](images/Listado%20de%20equipos%20de%20cómputo.jpeg)
 
-Repair of Computer Equipment
+Reparación de Equipos de Cómputo
 
 ![](images/Listado%20de%20reparaciones.jpeg)
 
-Maintenance of Computer Equipment
+Mantenimiento de Equipos de Cómputo
 
 ![](images/Listado%20de%20mantenimientos.jpeg)
 
-Reports
+Reportes
 
 ![](images/Listado%20de%20reportes.jpeg)
 
-Reports - Excel
+Reportes - Excel
 
 ![](images/Reporte%20de%20inventario%20generado.jpeg)
 
-Reports - PDF
+Reportes - PDF
 
 ![](images/Reporte%20generado%20de%20mantenimientos%20de%20equipos.png)
 
-Recover Password
+Recuperar Contraseña
 
 ![](images/Correo%20electrónico%20con%20contraseña%20nueva.jpeg)
 
