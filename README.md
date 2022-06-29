@@ -1,46 +1,48 @@
 ## Sistema de Inventarios de Equipos de Cómputo
 
-Pantalla Principal
+NOTA: Los datos presentados en los pantallazos, son solo datos de prueba, NO son datos reales, por cuestiones de privacidad de datos de la empresa. 
+
+Pantalla Principal:
 
 [![P-gina-principal.jpg](https://i.postimg.cc/fRxS1H79/P-gina-principal.jpg)](https://postimg.cc/xX1dz34f)
 
-Inicio de Sesión
+Inicio de Sesión:
 
 ![](images/Inicio%20de%20sesión.jpeg)
 
-Estadísticas Rápidas
+Estadísticas Rápidas:
 
 ![](images/Estadísticas%20rápidas.jpeg)
 
-Usuarios
+Usuarios:
 
 ![](images/Listado%20de%20usuarios.jpeg)
 
-Equipos de Cómputo
+Equipos de Cómputo:
 
 ![](images/Listado%20de%20equipos%20de%20cómputo.jpeg)
 
-Reparación de Equipos de Cómputo
+Reparación de Equipos de Cómputo:
 
 ![](images/Listado%20de%20reparaciones.jpeg)
 
-Mantenimiento de Equipos de Cómputo
+Mantenimiento de Equipos de Cómputo:
 
 ![](images/Listado%20de%20mantenimientos.jpeg)
 
-Reportes
+Reportes:
 
 ![](images/Listado%20de%20reportes.jpeg)
 
-Reportes - Excel
+Reportes - Excel:
 
 ![](images/Reporte%20de%20inventario%20generado.jpeg)
 
-Reportes - PDF
+Reportes - PDF:
 
 ![](images/Reporte%20generado%20de%20mantenimientos%20de%20equipos.png)
 
-Recuperar Contraseña
+Recuperar Contraseña:
 
 ![](images/Correo%20electrónico%20con%20contraseña%20nueva.jpeg)
 
